@@ -18,6 +18,10 @@ logLoss <- function(actual, predicted){
 #' @export
 
 mlogLoss <- function(actual, predicted){
+
+  if(class(actual) %in% c('factor', 'character')){
+    actual = as.numeric(as.factor(actual))
+  }
   mlogLoss_(actual, predicted)
 }
 
