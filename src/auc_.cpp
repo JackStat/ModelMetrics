@@ -20,10 +20,10 @@ double auc_(NumericVector actual, NumericVector predicted) {
   double n = actual.size();
 
   IntegerVector Ranks = rank(predicted);
-  int NPos = sum(actual == 1);
-  int NNeg = (actual.size() - NPos);
+  double NPos = sum(actual == 1);
+  double NNeg = (actual.size() - NPos);
 
-  int sumranks = 0;
+  double sumranks = 0;
 
   for(int i = 0; i < n; ++i) {
     if (actual[i] == 1){
