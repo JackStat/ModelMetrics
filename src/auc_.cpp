@@ -17,12 +17,13 @@ IntegerVector rank(NumericVector x) {
 // [[Rcpp::export]]
 double auc_(NumericVector actual, NumericVector predicted) {
 
+  double n = actual.size();
+
   IntegerVector Ranks = rank(predicted);
   int NPos = sum(actual == 1);
-  int NNeg = actual.size() - NPos;
+  int NNeg = (actual.size() - NPos);
 
   int sumranks = 0;
-  double n = actual.size();
 
   for(int i = 0; i < n; ++i) {
     if (actual[i] == 1){
@@ -30,8 +31,8 @@ double auc_(NumericVector actual, NumericVector predicted) {
     }
   }
 
-  double p1 = pow(n, -10) * (sumranks - NPos*( NPos + 1 ) / 2);
-  long double p2 = pow(n, -10) * NPos*NNeg;
+  double p1 = (sumranks - NPos*( NPos + 1 ) / 2);
+  long double p2 = NPos*NNeg;
 
   double auc =  p1 / p2;
   return auc ;
