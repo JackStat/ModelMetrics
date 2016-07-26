@@ -2,6 +2,7 @@
 
 export(auc)
 export(logLoss)
+export(mlogLoss)
 export(mse)
 importFrom(Rcpp,sourceCpp)
 useDynLib(ModelMetrics)
