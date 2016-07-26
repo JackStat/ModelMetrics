@@ -17,3 +17,7 @@ logLoss_ <- function(actual, predicted) {
     .Call('ModelMetrics_logLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
+mse_ <- function(actual, predicted) {
+    .Call('ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+

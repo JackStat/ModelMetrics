@@ -20,3 +20,12 @@ logLoss <- function(actual, predicted){
 auc <- function(actual, predicted){
   auc_(actual, predicted)
 }
+
+
+#' @title MSE
+#'
+#' @export
+
+mse <- function(actual, predicted){
+  mse_(actual, predicted)
+}
