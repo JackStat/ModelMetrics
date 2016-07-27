@@ -6,10 +6,24 @@ NULL
 
 #' @title Log Loss
 #'
+#' @param actual a binary vector of the labels
+#' @param predicted a vector of predicted values
+#' @param distribution the distribution of the loss function needed \code{binomial, poisson}
+#'
 #' @export
 
-logLoss <- function(actual, predicted){
-  logLoss_(actual, predicted)
+logLoss <- function(actual, predicted, distribution = "binomial"){
+
+  if(distribution == "binomial"){
+
+    return(logLoss_(actual, predicted))
+
+  } else if(distribution == 'poisson'){
+
+    return(plogLoss_(actual, predicted))
+
+  }
+
 }
 
 

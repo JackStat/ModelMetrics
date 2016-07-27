@@ -4,6 +4,13 @@
 \alias{logLoss}
 \title{Log Loss}
 \usage{
-logLoss(actual, predicted)
+logLoss(actual, predicted, distribution = "binomial")
+}
+\arguments{
+\item{actual}{a binary vector of the labels}
+
+\item{predicted}{a vector of predicted values}
+
+\item{distribution}{the distribution of the loss function needed \code{binomial, poisson}}
 }
 

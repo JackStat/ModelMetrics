@@ -29,3 +29,11 @@ double mlogLoss_(NumericVector actual, NumericMatrix predicted) {
 }
 
 
+// [[Rcpp::export]]
+double plogLoss_(NumericVector actual, NumericVector predicted) {
+
+  NumericVector pl = log(gamma(actual + 1)) + predicted - log(predicted) * actual;
+  double plogloss = mean(pl);
+  return plogloss ;
+
+}

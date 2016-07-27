@@ -63,6 +63,18 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// plogLoss_
+double plogLoss_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_plogLoss_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    __result = Rcpp::wrap(plogLoss_(actual, predicted));
+    return __result;
+END_RCPP
+}
 // mse_
 double mse_(NumericVector actual, NumericVector predicted);
 RcppExport SEXP ModelMetrics_mse_(SEXP actualSEXP, SEXP predictedSEXP) {
