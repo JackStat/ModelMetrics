@@ -11,6 +11,6 @@ ModelMetrics is a much faster and reliable package for evaluating models. ModelM
 Currently the package is considered "in development" so it is not available on CRAN yet. To install the ModelMetrics R package run
 
 ```R
-devtools::install("JackStat/ModelMetrics")
+devtools::install_github("JackStat/ModelMetrics")
 ```
 
