@@ -1,5 +1,6 @@
-[![Coverage Status](https://coveralls.io/repos/github/JackStat/ModelMetrics/badge.svg?branch=master)](https://coveralls.io/github/JackStat/ModelMetrics?branch=master)
 [![Build Status](https://travis-ci.org/JackStat/ModelMetrics.svg?branch=master)](https://travis-ci.org/JackStat/ModelMetrics.svg?branch=master)
+
+[![Coverage Status](https://coveralls.io/repos/github/JackStat/ModelMetrics/badge.svg?branch=master)](https://coveralls.io/github/JackStat/ModelMetrics?branch=master)
 
 ## ModelMetrics: Rapid Calculation of Model Metrics
 Tyler Hunt thunt@snapfinance.com
