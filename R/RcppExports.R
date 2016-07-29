@@ -29,3 +29,7 @@ mse_ <- function(actual, predicted) {
     .Call('ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
+rmse_ <- function(actual, predicted) {
+    .Call('ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+

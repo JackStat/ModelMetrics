@@ -13,4 +13,7 @@ logLoss(actual, predicted, distribution = "binomial")
 
 \item{distribution}{the distribution of the loss function needed \code{binomial, poisson}}
 }
+\description{
+Calculates the log loss or entropy loss for a binary outcome
+}
 

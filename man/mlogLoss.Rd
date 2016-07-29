@@ -6,4 +6,12 @@
 \usage{
 mlogLoss(actual, predicted)
 }
+\arguments{
+\item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
+
+\item{predicted}{matrix of predicted values}
+}
+\description{
+Calculated the multi-class log loss
+}
 

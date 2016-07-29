@@ -2,8 +2,16 @@
 % Please edit documentation in R/ModelMetrics.R
 \name{auc}
 \alias{auc}
-\title{AUC}
+\title{Area Under the Curve}
 \usage{
 auc(actual, predicted)
+}
+\arguments{
+\item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
+
+\item{predicted}{A vector of predicted values}
+}
+\description{
+Calculates the area under the curve for a binary classifcation model
 }
 

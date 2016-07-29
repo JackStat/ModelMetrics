@@ -87,3 +87,15 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// rmse_
+double rmse_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_rmse_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    __result = Rcpp::wrap(rmse_(actual, predicted));
+    return __result;
+END_RCPP
+}
