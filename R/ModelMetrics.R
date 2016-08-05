@@ -24,6 +24,8 @@ logLoss <- function(actual, predicted, distribution = "binomial"){
 
     return(plogLoss_(actual, predicted))
 
+  } else {
+    stop(paste(distribution, "is not defined. Please use binomial or poisson"))
   }
 
 }
