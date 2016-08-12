@@ -139,6 +139,30 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// msle_
+double msle_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_msle_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    rcpp_result_gen = Rcpp::wrap(msle_(actual, predicted));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rmsle_
+double rmsle_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_rmsle_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    rcpp_result_gen = Rcpp::wrap(rmsle_(actual, predicted));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rmse_
 double rmse_(NumericVector actual, NumericVector predicted);
 RcppExport SEXP ModelMetrics_rmse_(SEXP actualSEXP, SEXP predictedSEXP) {

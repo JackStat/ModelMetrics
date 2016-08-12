@@ -37,6 +37,27 @@ double mse_(NumericVector actual, NumericVector predicted) {
 
 
 // [[Rcpp::export]]
+double msle_(NumericVector actual, NumericVector predicted) {
+
+  NumericVector logdiff = (log(1 + actual) - log(1 + predicted));
+  NumericVector le = logdiff*logdiff;
+
+  double msle = mean(le);
+  return msle;
+
+}
+
+
+// [[Rcpp::export]]
+double rmsle_(NumericVector actual, NumericVector predicted) {
+
+  double rmsle = sqrt(mse_(actual, predicted));
+  return rmsle;
+
+}
+
+
+// [[Rcpp::export]]
 double rmse_(NumericVector actual, NumericVector predicted) {
 
   double rmse = sqrt(mse_(actual, predicted));

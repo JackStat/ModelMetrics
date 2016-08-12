@@ -45,6 +45,14 @@ mse_ <- function(actual, predicted) {
     .Call('ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
+msle_ <- function(actual, predicted) {
+    .Call('ModelMetrics_msle_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+
+rmsle_ <- function(actual, predicted) {
+    .Call('ModelMetrics_rmsle_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+
 rmse_ <- function(actual, predicted) {
     .Call('ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
