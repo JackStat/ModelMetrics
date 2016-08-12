@@ -90,6 +90,84 @@ rmse <- function(actual, predicted){
 }
 
 
+
+#' @title Confusion Matrix
+#' @description Create a confusion matrix given a specific cutoff.
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @export
+
+confusionMatrix <- function(actual, predicted, cutoff = .5){
+  confusionMatrix_(actual, predicted, cutoff)
+}
+
+
+
+#' @title Postive Predictive Value
+#'
+#' @description True Postives / (True Positives + False Positives)
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @export
+
+ppv <- function(actual, predicted, cutoff = .5){
+  ppv_(actual, predicted, cutoff)
+}
+
+
+
+#' @title Negative Predictive Value
+#'
+#' @description True Negatives / (True Negatives + False Negatives)
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @export
+
+npv <- function(actual, predicted, cutoff = .5){
+  npv_(actual, predicted, cutoff)
+}
+
+
+
+#' @title Recall
+#'
+#' @description True Positives / (True Positives + False Negatives)
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @export
+
+recall <- function(actual, predicted, cutoff = .5){
+  recall_(actual, predicted, cutoff)
+}
+
+
+
+#' @title Mean F1 Score
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#'
+#' @export
+
+f1Score1 <- function(actual, prediction){
+
+  f1Score_(actual, prediction)
+
+}
+
+
 #' @title Average absolute error
 #'
 #' @param actual A vector of the labels
@@ -111,4 +189,5 @@ error <- function(actual, prediction, type = 'absolute'){
   return(err)
 
 }
+
 
