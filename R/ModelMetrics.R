@@ -88,3 +88,27 @@ mse <- function(actual, predicted){
 rmse <- function(actual, predicted){
   rmse_(actual, predicted)
 }
+
+
+#' @title Average absolute error
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param type use \code{absolute} to calculate absolute error and \code{class} for classification error
+#'
+#' @export
+
+error <- function(actual, prediction, type = 'absolute'){
+
+  if(type == 'absolute'){
+    err = ae_(actual, prediction)
+  } else if(type == 'class') {
+    err = ce_(actual, prediction)
+  } else {
+    stop(paste0(type, "is not a defined type use abolute or class"))
+  }
+
+  return(err)
+
+}
+
