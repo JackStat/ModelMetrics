@@ -4,11 +4,14 @@
 \alias{ce}
 \title{Classification error}
 \usage{
-ce(actual, prediction)
+ce(actual, predicted)
 }
 \arguments{
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
+}
+\description{
+Calculates the classification error
 }
 

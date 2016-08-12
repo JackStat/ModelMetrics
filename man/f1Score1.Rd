@@ -11,4 +11,7 @@ f1Score1(actual, prediction)
 
 \item{predicted}{A vector of predicted values}
 }
+\description{
+Calculates the mean f1 score
+}
 

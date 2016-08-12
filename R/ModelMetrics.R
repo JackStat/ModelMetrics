@@ -155,6 +155,7 @@ recall <- function(actual, predicted, cutoff = .5){
 
 
 #' @title Mean F1 Score
+#' @description Calculates the mean f1 score
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
@@ -170,6 +171,7 @@ f1Score1 <- function(actual, prediction){
 
 
 #' @title Mean absolute error
+#' @description Calculates the mean absolute error
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
@@ -185,15 +187,16 @@ mae <- function(actual, prediction){
 
 
 #' @title Classification error
+#' @description Calculates the classification error
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
 #'
 #' @export
 
-ce <- function(actual, prediction){
+ce <- function(actual, predicted){
 
-  ce_(actual, prediction)
+  ce_(actual, predicted)
 
 }
 

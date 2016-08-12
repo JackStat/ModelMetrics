@@ -11,4 +11,7 @@ mae(actual, prediction)
 
 \item{predicted}{A vector of predicted values}
 }
+\description{
+Calculates the mean absolute error
+}
 
