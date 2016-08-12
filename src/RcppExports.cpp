@@ -103,15 +103,15 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// ae_
-double ae_(NumericVector actual, NumericVector predicted);
-RcppExport SEXP ModelMetrics_ae_(SEXP actualSEXP, SEXP predictedSEXP) {
+// mae_
+double mae_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_mae_(SEXP actualSEXP, SEXP predictedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
-    rcpp_result_gen = Rcpp::wrap(ae_(actual, predicted));
+    rcpp_result_gen = Rcpp::wrap(mae_(actual, predicted));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -124,6 +124,30 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
     rcpp_result_gen = Rcpp::wrap(ce_(actual, predicted));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mse_
+double mse_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_mse_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    rcpp_result_gen = Rcpp::wrap(mse_(actual, predicted));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rmse_
+double rmse_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_rmse_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    rcpp_result_gen = Rcpp::wrap(rmse_(actual, predicted));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -160,30 +184,6 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
     rcpp_result_gen = Rcpp::wrap(plogLoss_(actual, predicted));
-    return rcpp_result_gen;
-END_RCPP
-}
-// mse_
-double mse_(NumericVector actual, NumericVector predicted);
-RcppExport SEXP ModelMetrics_mse_(SEXP actualSEXP, SEXP predictedSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
-    rcpp_result_gen = Rcpp::wrap(mse_(actual, predicted));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rmse_
-double rmse_(NumericVector actual, NumericVector predicted);
-RcppExport SEXP ModelMetrics_rmse_(SEXP actualSEXP, SEXP predictedSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
-    rcpp_result_gen = Rcpp::wrap(rmse_(actual, predicted));
     return rcpp_result_gen;
 END_RCPP
 }

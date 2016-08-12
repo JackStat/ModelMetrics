@@ -168,25 +168,32 @@ f1Score1 <- function(actual, prediction){
 }
 
 
-#' @title Average absolute error
+
+#' @title Mean absolute error
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
-#' @param type use \code{absolute} to calculate absolute error and \code{class} for classification error
 #'
 #' @export
 
-error <- function(actual, prediction, type = 'absolute'){
+mae <- function(actual, prediction){
 
-  if(type == 'absolute'){
-    err = ae_(actual, prediction)
-  } else if(type == 'class') {
-    err = ce_(actual, prediction)
-  } else {
-    stop(paste0(type, "is not a defined type use abolute or class"))
-  }
+  mae_(actual, prediction)
 
-  return(err)
+}
+
+
+
+#' @title Classification error
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#'
+#' @export
+
+ce <- function(actual, prediction){
+
+  ce_(actual, prediction)
 
 }
 

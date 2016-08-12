@@ -2,9 +2,9 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-double ae_(NumericVector actual, NumericVector predicted) {
-  double ae = mean(abs(actual - predicted));
-  return ae;
+double mae_(NumericVector actual, NumericVector predicted) {
+  double mae = mean(abs(actual - predicted));
+  return mae;
 }
 
 
@@ -24,3 +24,23 @@ double ce_(NumericVector actual, NumericVector predicted) {
   return ce;
 
 }
+
+
+// [[Rcpp::export]]
+double mse_(NumericVector actual, NumericVector predicted) {
+
+  NumericVector err = (actual-predicted);
+  double mse = mean(err*err);
+  return mse;
+
+}
+
+
+// [[Rcpp::export]]
+double rmse_(NumericVector actual, NumericVector predicted) {
+
+  double rmse = sqrt(mse_(actual, predicted));
+  return rmse;
+
+}
+

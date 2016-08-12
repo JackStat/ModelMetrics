@@ -33,12 +33,20 @@ f1Score_ <- function(actual, predicted) {
     .Call('ModelMetrics_f1Score_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
-ae_ <- function(actual, predicted) {
-    .Call('ModelMetrics_ae_', PACKAGE = 'ModelMetrics', actual, predicted)
+mae_ <- function(actual, predicted) {
+    .Call('ModelMetrics_mae_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 ce_ <- function(actual, predicted) {
     .Call('ModelMetrics_ce_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+
+mse_ <- function(actual, predicted) {
+    .Call('ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+
+rmse_ <- function(actual, predicted) {
+    .Call('ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 logLoss_ <- function(actual, predicted) {
@@ -51,13 +59,5 @@ mlogLoss_ <- function(actual, predicted) {
 
 plogLoss_ <- function(actual, predicted) {
     .Call('ModelMetrics_plogLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
-}
-
-mse_ <- function(actual, predicted) {
-    .Call('ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
-}
-
-rmse_ <- function(actual, predicted) {
-    .Call('ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
