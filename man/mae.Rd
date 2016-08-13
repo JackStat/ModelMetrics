@@ -4,7 +4,7 @@
 \alias{mae}
 \title{Mean absolute error}
 \usage{
-mae(actual, prediction)
+mae(actual, predicted)
 }
 \arguments{
 \item{actual}{A vector of the labels}

@@ -162,9 +162,9 @@ recall <- function(actual, predicted, cutoff = .5){
 #'
 #' @export
 
-f1Score1 <- function(actual, prediction){
+f1Score1 <- function(actual, predicted){
 
-  f1Score_(actual, prediction)
+  f1Score_(actual, predicted)
 
 }
 
@@ -178,9 +178,9 @@ f1Score1 <- function(actual, prediction){
 #'
 #' @export
 
-mae <- function(actual, prediction){
+mae <- function(actual, predicted){
 
-  mae_(actual, prediction)
+  mae_(actual, predicted)
 
 }
 

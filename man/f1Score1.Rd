@@ -4,7 +4,7 @@
 \alias{f1Score1}
 \title{Mean F1 Score}
 \usage{
-f1Score1(actual, prediction)
+f1Score1(actual, predicted)
 }
 \arguments{
 \item{actual}{A vector of the labels}
