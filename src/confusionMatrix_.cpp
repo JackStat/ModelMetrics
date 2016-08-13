@@ -23,8 +23,13 @@ NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, do
 double ppv_(NumericVector actual, NumericVector predicted, double cutoff) {
 
   NumericMatrix cMat = confusionMatrix_(actual, predicted, cutoff);
+  double Denom = (cMat(1,1) + cMat(1,0));
+  double ppv = 0;
 
-  double ppv = cMat(1,1) / (cMat(1,1) + cMat(1,0));
+  if(Denom != 0){
+    ppv = cMat(1,1) / Denom;
+  }
+
   return ppv;
 
 }
@@ -34,8 +39,13 @@ double ppv_(NumericVector actual, NumericVector predicted, double cutoff) {
 double npv_(NumericVector actual, NumericVector predicted, double cutoff) {
 
   NumericMatrix cMat = confusionMatrix_(actual, predicted, cutoff);
+  double Denom (cMat(0,0) + cMat(0,1));
+  double npv = 0;
 
-  double npv = cMat(0,0) / (cMat(0,0) + cMat(0,1));
+  if(Denom != 0){
+    npv = cMat(0,0) / Denom;
+  }
+
   return npv;
 
 }
@@ -62,7 +72,11 @@ double f1Score_(NumericVector actual, NumericVector predicted){
     if (actual[i] == 1){
       double p = ppv_(actual, predicted, predicted(i));
       double r = recall_(actual, predicted, predicted(i));
-      f1(i) = (2*p*r)/(p + r);
+      if(p + r == 0){
+        f1(i) = 0;
+      } else {
+        f1(i) = (2*p*r)/(p + r);
+      }
     }
   }
 
