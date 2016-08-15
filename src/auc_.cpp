@@ -32,7 +32,7 @@ double auc_(NumericVector actual, NumericVector predicted) {
   }
 
   double p1 = (sumranks - NPos*( NPos + 1 ) / 2);
-  long double p2 = NPos*NNeg;
+  double p2 = NPos*NNeg;
 
   double auc =  p1 / p2;
   return auc ;
