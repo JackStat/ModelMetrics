@@ -16,7 +16,7 @@ NULL
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' logLoss(y, Preds)
+#' logLoss(testDF$y, Preds)
 #'
 #' @export
 
@@ -68,7 +68,7 @@ mlogLoss <- function(actual, predicted){
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' auc(y, Preds)
+#' auc(testDF$y, Preds)
 #'
 #' @export
 
@@ -88,7 +88,7 @@ auc <- function(actual, predicted){
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' mse(y, Preds)
+#' mse(testDF$y, Preds)
 #'
 #' @export
 
@@ -107,7 +107,7 @@ mse <- function(actual, predicted){
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' rmse(y, Preds)
+#' rmse(testDF$y, Preds)
 #'
 #' @export
 
@@ -144,8 +144,8 @@ confusionMatrix <- function(actual, predicted, cutoff = .5){
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' ppv(y, Preds, cutoff = 0)
-#' precision(y, Preds, cutoff = 0)
+#' ppv(testDF$y, Preds, cutoff = 0)
+#' precision(testDF$y, Preds, cutoff = 0)
 #'
 #' @export
 
@@ -174,7 +174,7 @@ precision <- function(actual, predicted, cutoff = .5){
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' npv(y, Preds, cutoff = 0)
+#' npv(testDF$y, Preds, cutoff = 0)
 #'
 #' @export
 
@@ -199,9 +199,9 @@ npv <- function(actual, predicted, cutoff = .5){
 #' glmModel <- glm(y ~ ., data=df, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
-#' recall(y, Preds, cutoff = 0)
-#' sensitivity(y, Preds, cutoff = 0)
-#' tpr(y, Preds, cutoff = 0)
+#' recall(testDF$y, Preds, cutoff = 0)
+#' sensitivity(testDF$, Preds, cutoff = 0)
+#' tpr(testDF$y, Preds, cutoff = 0)
 #'
 #' @export
 
