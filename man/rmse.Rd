@@ -12,7 +12,7 @@ rmse(actual, predicted)
 \item{predicted}{A vector of predicted values
 
 data(testDF)
-glmModel <- glm(y ~ ., data=df, family="binomial")
+glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 rmse(testDF$y, Preds)}

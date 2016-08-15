@@ -2,6 +2,11 @@
 #' @importFrom Rcpp sourceCpp
 NULL
 
+#' Test data
+#'
+#' @name testDF
+#' @docType data
+NULL
 
 #' @title Log Loss
 #'
@@ -13,7 +18,7 @@ NULL
 #'
 #' @examples
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' logLoss(testDF$y, Preds)
@@ -68,7 +73,7 @@ mlogLoss <- function(actual, predicted){
 #'
 #' @examples
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' auc(testDF$y, Preds)
@@ -88,7 +93,7 @@ auc <- function(actual, predicted){
 #'
 #' @examples
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' mse(testDF$y, Preds)
@@ -107,7 +112,7 @@ mse <- function(actual, predicted){
 #' @param predicted A vector of predicted values
 #'
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' rmse(testDF$y, Preds)
@@ -139,12 +144,14 @@ confusionMatrix <- function(actual, predicted, cutoff = .5){
 #'
 #' @description True Postives / (True Positives + False Positives)
 #'
+#' @aliases precision
+#'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' ppv(testDF$y, Preds, cutoff = 0)
@@ -174,7 +181,7 @@ precision <- function(actual, predicted, cutoff = .5){
 #' @param cutoff A cutoff for the predicted values
 #'
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' npv(testDF$y, Preds, cutoff = 0)
@@ -190,7 +197,6 @@ npv <- function(actual, predicted, cutoff = .5){
 #' @title Recall, Sensitivity, tpr
 #'
 #' @aliases sensitivity tpr
-#' @usage \code{recall(actual, predicted, cutoff = 0.5)}
 #'
 #' @description True Positives / (True Positives + False Negatives)
 #'
@@ -199,7 +205,7 @@ npv <- function(actual, predicted, cutoff = .5){
 #' @param cutoff A cutoff for the predicted values
 #'
 #' data(testDF)
-#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' recall(testDF$y, Preds, cutoff = 0)

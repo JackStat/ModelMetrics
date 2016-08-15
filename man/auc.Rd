@@ -16,7 +16,7 @@ Calculates the area under the curve for a binary classifcation model
 }
 \examples{
 data(testDF)
-glmModel <- glm(y ~ ., data=df, family="binomial")
+glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 auc(testDF$y, Preds)

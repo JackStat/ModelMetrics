@@ -2,6 +2,7 @@
 % Please edit documentation in R/ModelMetrics.R
 \name{ppv}
 \alias{ppv}
+\alias{precision}
 \title{Postive Predictive Value}
 \usage{
 ppv(actual, predicted, cutoff = 0.5)
@@ -14,7 +15,7 @@ ppv(actual, predicted, cutoff = 0.5)
 \item{cutoff}{A cutoff for the predicted values
 
 data(testDF)
-glmModel <- glm(y ~ ., data=df, family="binomial")
+glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 ppv(testDF$y, Preds, cutoff = 0)

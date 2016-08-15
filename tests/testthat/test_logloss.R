@@ -18,3 +18,16 @@ test_that("mlogLoss character/factor actual", {
   expect_true(m1 == m3)
 
 })
+
+
+test_that("logLoss estimates with 0s and 1s as values", {
+
+  data(testDF)
+  glmModel <- glm(y ~ ., data=testDF, family="binomial")
+  Preds <- predict(glmModel, type = 'response')
+
+  Preds[1] = 0
+  Preds[2] = 1
+  logLoss(testDF$y, Preds)
+
+})

@@ -6,7 +6,7 @@
 \alias{tpr}
 \title{Recall, Sensitivity, tpr}
 \usage{
-\code{recall(actual, predicted, cutoff = 0.5)}
+recall(actual, predicted, cutoff = 0.5)
 }
 \arguments{
 \item{actual}{A vector of the labels}
@@ -16,7 +16,7 @@
 \item{cutoff}{A cutoff for the predicted values
 
 data(testDF)
-glmModel <- glm(y ~ ., data=df, family="binomial")
+glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 recall(testDF$y, Preds, cutoff = 0)

@@ -16,7 +16,7 @@ Calculates the mean square error
 }
 \examples{
 data(testDF)
-glmModel <- glm(y ~ ., data=df, family="binomial")
+glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 mse(testDF$y, Preds)

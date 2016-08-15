@@ -14,7 +14,7 @@ npv(actual, predicted, cutoff = 0.5)
 \item{cutoff}{A cutoff for the predicted values
 
 data(testDF)
-glmModel <- glm(y ~ ., data=df, family="binomial")
+glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 npv(testDF$y, Preds, cutoff = 0)}
