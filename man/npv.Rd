@@ -11,7 +11,13 @@ npv(actual, predicted, cutoff = 0.5)
 
 \item{predicted}{A vector of predicted values}
 
-\item{cutoff}{A cutoff for the predicted values}
+\item{cutoff}{A cutoff for the predicted values
+
+data(testDF)
+glmModel <- glm(y ~ ., data=df, family="binomial")
+Preds <- predict(glmModel, type = 'response')
+
+npv(y, Preds, cutoff = 0)}
 }
 \description{
 True Negatives / (True Negatives + False Negatives)

@@ -14,4 +14,12 @@ auc(actual, predicted)
 \description{
 Calculates the area under the curve for a binary classifcation model
 }
+\examples{
+data(testDF)
+glmModel <- glm(y ~ ., data=df, family="binomial")
+Preds <- predict(glmModel, type = 'response')
+
+auc(y, Preds)
+
+}
 

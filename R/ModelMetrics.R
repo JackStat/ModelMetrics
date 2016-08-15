@@ -3,7 +3,6 @@
 NULL
 
 
-
 #' @title Log Loss
 #'
 #' @description Calculates the log loss or entropy loss for a binary outcome
@@ -11,6 +10,13 @@ NULL
 #' @param actual a binary vector of the labels
 #' @param predicted a vector of predicted values
 #' @param distribution the distribution of the loss function needed \code{binomial, poisson}
+#'
+#' @examples
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' logLoss(y, Preds)
 #'
 #' @export
 
@@ -57,6 +63,13 @@ mlogLoss <- function(actual, predicted){
 #' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
 #' @param predicted A vector of predicted values
 #'
+#' @examples
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' auc(y, Preds)
+#'
 #' @export
 
 auc <- function(actual, predicted){
@@ -70,6 +83,13 @@ auc <- function(actual, predicted){
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
 #'
+#' @examples
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' mse(y, Preds)
+#'
 #' @export
 
 mse <- function(actual, predicted){
@@ -82,6 +102,12 @@ mse <- function(actual, predicted){
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
+#'
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' rmse(y, Preds)
 #'
 #' @export
 
@@ -114,11 +140,25 @@ confusionMatrix <- function(actual, predicted, cutoff = .5){
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' ppv(y, Preds, cutoff = 0)
+#' precision(y, Preds, cutoff = 0)
+#'
 #' @export
 
 ppv <- function(actual, predicted, cutoff = .5){
   ppv_(actual, predicted, cutoff)
 }
+
+#' @export
+
+precision <- function(actual, predicted, cutoff = .5){
+  ppv_(actual, predicted, cutoff)
+}
+
 
 
 
@@ -130,6 +170,12 @@ ppv <- function(actual, predicted, cutoff = .5){
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' npv(y, Preds, cutoff = 0)
+#'
 #' @export
 
 npv <- function(actual, predicted, cutoff = .5){
@@ -138,7 +184,10 @@ npv <- function(actual, predicted, cutoff = .5){
 
 
 
-#' @title Recall
+#' @title Recall, Sensitivity, tpr
+#'
+#' @aliases sensitivity tpr
+#' @usage \code{recall(actual, predicted, cutoff = 0.5)}
 #'
 #' @description True Positives / (True Positives + False Negatives)
 #'
@@ -146,12 +195,29 @@ npv <- function(actual, predicted, cutoff = .5){
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data=df, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' recall(y, Preds, cutoff = 0)
+#' sensitivity(y, Preds, cutoff = 0)
+#' tpr(y, Preds, cutoff = 0)
+#'
 #' @export
 
 recall <- function(actual, predicted, cutoff = .5){
   recall_(actual, predicted, cutoff)
 }
 
+#' @export
+sensitivity <- function(actual, predicted, cutoff = .5){
+  recall_(actual, predicted, cutoff)
+}
+
+#' @export
+tpr <- function(actual, predicted, cutoff = .5){
+  recall_(actual, predicted, cutoff)
+}
 
 
 #' @title F1 Score

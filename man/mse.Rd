@@ -14,4 +14,12 @@ mse(actual, predicted)
 \description{
 Calculates the mean square error
 }
+\examples{
+data(testDF)
+glmModel <- glm(y ~ ., data=df, family="binomial")
+Preds <- predict(glmModel, type = 'response')
+
+mse(y, Preds)
+
+}
 

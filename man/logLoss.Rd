@@ -16,4 +16,12 @@ logLoss(actual, predicted, distribution = "binomial")
 \description{
 Calculates the log loss or entropy loss for a binary outcome
 }
+\examples{
+data(testDF)
+glmModel <- glm(y ~ ., data=df, family="binomial")
+Preds <- predict(glmModel, type = 'response')
+
+logLoss(y, Preds)
+
+}
 
