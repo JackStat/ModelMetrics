@@ -19,7 +19,7 @@ data(testDF)
 glmModel <- glm(y ~ ., data=df, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-mse(y, Preds)
+mse(testDF$y, Preds)
 
 }
 

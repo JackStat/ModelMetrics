@@ -17,7 +17,7 @@ data(testDF)
 glmModel <- glm(y ~ ., data=df, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-npv(y, Preds, cutoff = 0)}
+npv(testDF$y, Preds, cutoff = 0)}
 }
 \description{
 True Negatives / (True Negatives + False Negatives)

@@ -19,9 +19,9 @@ data(testDF)
 glmModel <- glm(y ~ ., data=df, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-recall(y, Preds, cutoff = 0)
-sensitivity(y, Preds, cutoff = 0)
-tpr(y, Preds, cutoff = 0)}
+recall(testDF$y, Preds, cutoff = 0)
+sensitivity(testDF$, Preds, cutoff = 0)
+tpr(testDF$y, Preds, cutoff = 0)}
 }
 \description{
 True Positives / (True Positives + False Negatives)

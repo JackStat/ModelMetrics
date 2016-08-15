@@ -19,7 +19,7 @@ data(testDF)
 glmModel <- glm(y ~ ., data=df, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-auc(y, Preds)
+auc(testDF$y, Preds)
 
 }
 

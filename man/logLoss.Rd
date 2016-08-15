@@ -21,7 +21,7 @@ data(testDF)
 glmModel <- glm(y ~ ., data=df, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-logLoss(y, Preds)
+logLoss(testDF$y, Preds)
 
 }
 

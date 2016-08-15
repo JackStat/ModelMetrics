@@ -15,7 +15,7 @@ data(testDF)
 glmModel <- glm(y ~ ., data=df, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-rmse(y, Preds)}
+rmse(testDF$y, Preds)}
 }
 \description{
 Calculates the root mean square error
