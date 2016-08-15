@@ -22,6 +22,9 @@ NULL
 
 logLoss <- function(actual, predicted, distribution = "binomial"){
 
+  eps <- 1e-15
+  predicted = pmax(pmin(predicted, 1 - eps), eps)
+
   if(distribution == "binomial"){
 
     return(logLoss_(actual, predicted))
