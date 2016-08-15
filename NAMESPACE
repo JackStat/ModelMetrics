@@ -3,7 +3,7 @@
 export(auc)
 export(ce)
 export(confusionMatrix)
-export(f1Score1)
+export(f1Score)
 export(logLoss)
 export(mae)
 export(mlogLoss)

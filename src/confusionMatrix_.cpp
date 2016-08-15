@@ -63,23 +63,17 @@ double recall_(NumericVector actual, NumericVector predicted, double cutoff) {
 }
 
 // [[Rcpp::export]]
-double f1Score_(NumericVector actual, NumericVector predicted){
+double f1Score_(NumericVector actual, NumericVector predicted, double cutoff){
 
   double n = predicted.size();
-  NumericVector f1 = NumericVector(n);
 
-  for(int i = 0; i < n; ++i) {
-    if (actual[i] == 1){
-      double p = ppv_(actual, predicted, predicted(i));
-      double r = recall_(actual, predicted, predicted(i));
-      if(p + r == 0){
-        f1(i) = 0;
-      } else {
-        f1(i) = (2*p*r)/(p + r);
-      }
-    }
+  double p = ppv_(actual, predicted, cutoff);
+  double r = recall_(actual, predicted, cutoff);
+  double f1 = 0;
+
+  if(p + r != 0){
+    f1 = (2*p*r)/(p + r);
   }
 
-  double f1score = mean(f1);
-  return f1score;
+  return f1;
 }

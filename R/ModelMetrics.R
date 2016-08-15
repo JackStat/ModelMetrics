@@ -154,17 +154,18 @@ recall <- function(actual, predicted, cutoff = .5){
 
 
 
-#' @title Mean F1 Score
-#' @description Calculates the mean f1 score
+#' @title F1 Score
+#' @description Calculates the f1 score
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
 #'
 #' @export
 
-f1Score1 <- function(actual, predicted){
+f1Score <- function(actual, predicted, cutoff = .5){
 
-  f1Score_(actual, predicted)
+  f1Score_(actual, predicted, cutoff)
 
 }
 
