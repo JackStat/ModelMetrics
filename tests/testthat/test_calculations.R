@@ -54,3 +54,10 @@ test_that("sensitivity returns correct values", {
 })
 
 
+test_that("brier returns correct values", {
+
+  expect_equal(brier(testDF$y, Preds), 0.04788846, tolerance = .000001)
+
+})
+
+
