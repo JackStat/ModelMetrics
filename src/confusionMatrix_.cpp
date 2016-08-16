@@ -65,8 +65,6 @@ double recall_(NumericVector actual, NumericVector predicted, double cutoff) {
 // [[Rcpp::export]]
 double f1Score_(NumericVector actual, NumericVector predicted, double cutoff){
 
-  double n = predicted.size();
-
   double p = ppv_(actual, predicted, cutoff);
   double r = recall_(actual, predicted, cutoff);
   double f1 = 0;
