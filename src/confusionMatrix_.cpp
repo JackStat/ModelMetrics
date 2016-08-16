@@ -78,7 +78,7 @@ double f1Score_(NumericVector actual, NumericVector predicted, double cutoff){
 
 
 // [[Rcpp::export]]
-double brier_(NumericVector actual, NumericVector predicted, double cutoff){
+double brier_(NumericVector actual, NumericVector predicted){
 
   double brier = mean(pow(actual - predicted, 2));
   return brier;

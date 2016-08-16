@@ -33,8 +33,8 @@ f1Score_ <- function(actual, predicted, cutoff) {
     .Call('ModelMetrics_f1Score_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
-brier_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_brier_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+brier_ <- function(actual, predicted) {
+    .Call('ModelMetrics_brier_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 mae_ <- function(actual, predicted) {
