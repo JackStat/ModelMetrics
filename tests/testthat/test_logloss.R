@@ -4,7 +4,7 @@ context("logLoss Tests")
 test_that("mlogLoss character/factor actual", {
 
   Levs = 8
-  Size = 1000000
+  Size = 100
   y = sample(1:Levs, Size, replace = TRUE)
 
   xm = matrix(runif(Levs*Size), ncol = Levs)
