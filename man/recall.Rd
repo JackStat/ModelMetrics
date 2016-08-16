@@ -13,17 +13,19 @@ recall(actual, predicted, cutoff = 0.5)
 
 \item{predicted}{A vector of predicted values}
 
-\item{cutoff}{A cutoff for the predicted values
-
+\item{cutoff}{A cutoff for the predicted values}
+}
+\description{
+True Positives / (True Positives + False Negatives)
+}
+\examples{
 data(testDF)
 glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 recall(testDF$y, Preds, cutoff = 0)
 sensitivity(testDF$, Preds, cutoff = 0)
-tpr(testDF$y, Preds, cutoff = 0)}
-}
-\description{
-True Positives / (True Positives + False Negatives)
+tpr(testDF$y, Preds, cutoff = 0)
+
 }
 

@@ -12,16 +12,18 @@ ppv(actual, predicted, cutoff = 0.5)
 
 \item{predicted}{A vector of predicted values}
 
-\item{cutoff}{A cutoff for the predicted values
-
+\item{cutoff}{A cutoff for the predicted values}
+}
+\description{
+True Postives / (True Positives + False Positives)
+}
+\examples{
 data(testDF)
 glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 ppv(testDF$y, Preds, cutoff = 0)
-precision(testDF$y, Preds, cutoff = 0)}
-}
-\description{
-True Postives / (True Positives + False Positives)
+precision(testDF$y, Preds, cutoff = 0)
+
 }
 

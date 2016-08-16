@@ -9,15 +9,17 @@ rmse(actual, predicted)
 \arguments{
 \item{actual}{A vector of the labels}
 
-\item{predicted}{A vector of predicted values
-
+\item{predicted}{A vector of predicted values}
+}
+\description{
+Calculates the root mean square error
+}
+\examples{
 data(testDF)
 glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
-rmse(testDF$y, Preds)}
-}
-\description{
-Calculates the root mean square error
+rmse(testDF$y, Preds)
+
 }
 
