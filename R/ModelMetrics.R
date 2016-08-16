@@ -226,7 +226,7 @@ npv <- function(actual, predicted, cutoff = .5){
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' recall(testDF$y, Preds, cutoff = 0)
-#' sensitivity(testDF$, Preds, cutoff = 0)
+#' sensitivity(testDF$y, Preds, cutoff = 0)
 #' tpr(testDF$y, Preds, cutoff = 0)
 #'
 #' @export
