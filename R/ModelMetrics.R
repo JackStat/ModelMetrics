@@ -59,6 +59,13 @@ mlogLoss <- function(actual, predicted){
   if(class(actual) %in% c('factor', 'character')){
     actual = as.numeric(as.factor(actual))
   }
+  if(class(predicted) %in% c('data.frame')){
+    predicted = as.matrix(predicted)
+  }
+
+  eps <- 1e-15
+  predicted = pmax(pmin(predicted, 1 - eps), eps)
+
   mlogLoss_(actual, predicted)
 }
 
