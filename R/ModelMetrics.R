@@ -111,6 +111,7 @@ mse <- function(actual, predicted){
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
 #'
+#' @examples
 #' data(testDF)
 #' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
@@ -150,6 +151,7 @@ confusionMatrix <- function(actual, predicted, cutoff = .5){
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
+#' @examples
 #' data(testDF)
 #' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
@@ -180,6 +182,7 @@ precision <- function(actual, predicted, cutoff = .5){
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
+#' @examples
 #' data(testDF)
 #' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
@@ -204,6 +207,7 @@ npv <- function(actual, predicted, cutoff = .5){
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
 #'
+#' @examples
 #' data(testDF)
 #' glmModel <- glm(y ~ ., data = testDF, family="binomial")
 #' Preds <- predict(glmModel, type = 'response')
