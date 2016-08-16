@@ -309,3 +309,22 @@ msle <- function(actual, predicted){
 rmsle <- function(actual, predicted){
   rmsle_(actual, predicted)
 }
+
+
+
+#' @title Brier Score
+#' @description Calculates the Brier score
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#'
+#' @export
+
+brier <- function(actual, predicted){
+  brier_(actual, predicted)
+}
+
+
+
+
+
