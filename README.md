@@ -20,5 +20,5 @@ install.packages("ModelMetrics")
 Or you can install the development version from Github with [devtools](https://github.com/hadley/devtools):
 
 ```r
-devtools::install_github("juliasilge/tidytext")
+devtools::install_github("JackStat/ModelMetrics")
 ```
