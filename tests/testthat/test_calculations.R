@@ -63,6 +63,12 @@ test_that("f1 score returns correct values", {
 
 })
 
+test_that("mcc returns correct values", {
+
+  expect_equal(mcc(testDF$y, Preds, .5), 0.8508762, tolerance = .000001)
+
+})
+
 
 test_that("brier returns correct values", {
 
