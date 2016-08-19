@@ -85,3 +85,23 @@ double brier_(NumericVector actual, NumericVector predicted){
 }
 
 
+// [[Rcpp::export]]
+double mcc_(NumericVector actual, NumericVector predicted, double cutoff){
+
+  // True Negatives
+  double TN = sum(predicted <= cutoff & actual == 0);
+  // False Negatives
+  double FN = sum(predicted <= cutoff & actual == 1);
+  // False positives
+  double FP = sum(predicted > cutoff & actual == 0);
+  // True positives
+  double TP = sum(predicted > cutoff & actual == 1);
+
+  double numerator = ((TP*TN) - (FP*FN));
+  double denom = sqrt((TP + FP)*(TP + FN)*(TN + FP)*(TN + FN));
+
+  double mcc = numerator/denom;
+  return mcc;
+}
+
+

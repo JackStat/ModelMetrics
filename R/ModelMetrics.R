@@ -340,4 +340,17 @@ brier <- function(actual, predicted){
 
 
 
+#' @title Matthews Correlation Coefficient
+#' @description Calculates the Matthews Correlation Coefficient
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @export
+
+mcc <- function(actual, predicted, cutoff){
+  mcc_(actual, predicted, cutoff)
+}
+
 

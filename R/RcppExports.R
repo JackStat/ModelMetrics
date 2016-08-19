@@ -37,6 +37,10 @@ brier_ <- function(actual, predicted) {
     .Call('ModelMetrics_brier_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
+mcc_ <- function(actual, predicted, cutoff) {
+    .Call('ModelMetrics_mcc_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+}
+
 mae_ <- function(actual, predicted) {
     .Call('ModelMetrics_mae_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
