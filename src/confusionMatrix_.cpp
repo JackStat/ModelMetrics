@@ -51,6 +51,18 @@ double npv_(NumericVector actual, NumericVector predicted, double cutoff) {
 }
 
 
+// [[Rcpp::export]]
+double tnr_(NumericVector actual, NumericVector predicted, double cutoff) {
+
+  double TN = sum(predicted < cutoff & actual == 0);
+  double N = sum(actual == 0);
+  double tnr = TN/N;
+
+  return tnr;
+
+}
+
+
 
 // [[Rcpp::export]]
 double recall_(NumericVector actual, NumericVector predicted, double cutoff) {

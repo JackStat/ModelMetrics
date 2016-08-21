@@ -49,6 +49,17 @@ test_that("npv returns correct values", {
 })
 
 
+test_that("specificity returns correct values", {
+
+  tempTab <- table(testDF$y, Preds > .5)
+  SPC <- tempTab[1,1]/sum(tempTab[1,])
+
+  expect_equal(specificity(testDF$y, Preds, .5), SPC, tolerance = .000001)
+  expect_equal(tnr(testDF$y, Preds, .5), SPC, tolerance = .000001)
+
+})
+
+
 test_that("sensitivity returns correct values", {
 
   expect_equal(recall(testDF$y, Preds, .5), 0.9516129, tolerance = .000001)

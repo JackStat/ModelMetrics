@@ -246,6 +246,37 @@ tpr <- function(actual, predicted, cutoff = .5){
 }
 
 
+#' @title Specificity, True negative rate
+#'
+#' @aliases specificity tnr
+#'
+#' @description True Negatives / (True Negatives + False Positives)
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @examples
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' tnr(testDF$y, Preds, cutoff = 0)
+#' specificity(testDF$y, Preds, cutoff = 0)
+#'
+#' @export
+
+tnr <- function(actual, predicted, cutoff = .5){
+  tnr_(actual, predicted, cutoff)
+}
+
+#' @export
+specificity <- function(actual, predicted, cutoff = .5){
+  tnr_(actual, predicted, cutoff)
+}
+
+
+
 #' @title F1 Score
 #' @description Calculates the f1 score
 #'

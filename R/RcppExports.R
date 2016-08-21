@@ -25,6 +25,10 @@ npv_ <- function(actual, predicted, cutoff) {
     .Call('ModelMetrics_npv_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
+tnr_ <- function(actual, predicted, cutoff) {
+    .Call('ModelMetrics_tnr_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+}
+
 recall_ <- function(actual, predicted, cutoff) {
     .Call('ModelMetrics_recall_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
