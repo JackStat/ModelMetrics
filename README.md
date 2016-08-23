@@ -22,3 +22,38 @@ Or you can install the development version from Github with [devtools](https://g
 ```r
 devtools::install_github("JackStat/ModelMetrics")
 ```
+
+
+### Benchmark and comparison
+N = 100000
+Actual = as.numeric(runif(N) > .5)
+Predicted = as.numeric(runif(N))
+
+actual = Actual
+predicted = Predicted
+
+s1 <- system.time(a1 <- ModelMetrics::auc(Actual, Predicted))
+s2 <- system.time(a2 <- Metrics::auc(Actual, Predicted))
+# Warning message:
+# In n_pos * n_neg : NAs produced by integer overflow
+s3 <- system.time(a3 <- pROC::auc(Actual, Predicted))
+s4 <- system.time(a4 <- MLmetrics::AUC(Predicted, Actual))
+# Warning message:
+# In n_pos * n_neg : NAs produced by integer overflow
+s5 <- system.time({pp <- ROCR::prediction(Predicted, Actual); a5 <- ROCR::performance(pp, 'auc')})
+
+
+data.frame(
+  package = c("ModelMetrics", "pROC", "ROCR")
+  ,Time = c(s1[[3]],s3[[3]],s6[[3]])
+)
+
+# MLmetrics and Metrics could not calculate so they are dropped from time comparison
+#        package   Time
+# 1 ModelMetrics  0.017
+# 2         pROC 53.162
+# 3         ROCR  0.257
+
+
+
+
