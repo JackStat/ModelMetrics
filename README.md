@@ -25,6 +25,8 @@ devtools::install_github("JackStat/ModelMetrics")
 
 
 ### Benchmark and comparison
+
+```r
 N = 100000
 Actual = as.numeric(runif(N) > .5)
 Predicted = as.numeric(runif(N))
@@ -53,7 +55,7 @@ data.frame(
 # 1 ModelMetrics  0.017
 # 2         pROC 53.162
 # 3         ROCR  0.257
-
+```
 
 
 
