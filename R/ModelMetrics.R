@@ -106,6 +106,23 @@ auc <- function(actual, predicted){
 #' @param predicted A data.frame of predicted values
 #'
 #'
+#' @examples
+#' setosa <- glm(I(Species == 'setosa') ~ Sepal.Length, data = iris, family = 'binomial')
+#' versicolor <- glm(I(Species == 'versicolor') ~ Sepal.Length, data = iris, family = 'binomial')
+#' virginica <- glm(I(Species == 'virginica') ~ Sepal.Length, data = iris, family = 'binomial')
+#'
+#' Pred <-
+#'   data.frame(
+#'     setosa = predict(setosa, type = 'response')
+#'     ,versicolor = predict(versicolor, type = 'response')
+#'     ,virginica = predict(virginica, type = 'response')
+#'   )
+#'
+#' Predicted = Pred/rowSums(Pred)
+#' Actual = iris$Species
+#'
+#' mauc(Actual, Predicted)
+#'
 #' @export
 
 mauc <- function(actual, predicted){
@@ -114,14 +131,14 @@ mauc <- function(actual, predicted){
 
   simpleAUC <- function(x){
     #Grab one-vs-all data for the class
-    y  <- ifelse(Data[,  "Actual"] == x, 1, 0)
+    y  <- as.numeric(Data[, "Actual"] == x)
     prob <- Data[,x]
     AUCs <- auc(y, Data[,x])
     return(AUCs)
   }
 
   AUCs <- sapply(levels(Actual), simpleAUC)
-  list(auc = AUCs, mauc = mean(AUCs))
+  list(mauc = mean(AUCs), auc = AUCs)
 
 }
 
