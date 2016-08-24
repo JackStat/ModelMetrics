@@ -98,6 +98,34 @@ auc <- function(actual, predicted){
 }
 
 
+#' @title Multiclass Area Under the Curve
+#'
+#' @description Calculates the area under the curve for a binary classifcation model
+#'
+#' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
+#' @param predicted A data.frame of predicted values
+#'
+#'
+#' @export
+
+mauc <- function(actual, predicted){
+
+  Data <- data.frame(Predicted, Actual)
+
+  simpleAUC <- function(x){
+    #Grab one-vs-all data for the class
+    y  <- ifelse(Data[,  "Actual"] == x, 1, 0)
+    prob <- Data[,x]
+    AUCs <- auc(y, Data[,x])
+    return(AUCs)
+  }
+
+  AUCs <- sapply(levels(Actual), simpleAUC)
+  list(auc = AUCs, mauc = mean(AUCs))
+
+}
+
+
 #' @title Mean Square Error
 #' @description Calculates the mean square error
 #'
