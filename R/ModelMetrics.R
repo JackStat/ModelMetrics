@@ -91,7 +91,7 @@ auc <- function(actual, predicted){
 
   binaryChecks(actual, 'auc')
   if(class(actual) %in% c('factor', 'character')){
-    actual = as.numeric(as.factor(actual)) - 1
+    actual = as.numeric(as.factor(as.character(actual))) - 1
   }
 
   auc_(actual, predicted)
