@@ -127,17 +127,19 @@ auc <- function(actual, predicted){
 
 mauc <- function(actual, predicted){
 
-  Data <- data.frame(Predicted, Actual)
+  Data <- data.frame(predicted, actual)
+  Outcomes <- length(unique(actual))
 
   simpleAUC <- function(x){
     #Grab one-vs-all data for the class
-    y  <- as.numeric(Data[, "Actual"] == x)
+    y1 = levels(Data$actual)[x]
+    y  <- as.numeric(Data[, "actual"] == y1)
     prob <- Data[,x]
-    AUCs <- auc(y, Data[,x])
+    AUCs <- auc(y, prob)
     return(AUCs)
   }
 
-  AUCs <- sapply(levels(Actual), simpleAUC)
+  AUCs <- sapply(1:Outcomes, simpleAUC)
   list(mauc = mean(AUCs), auc = AUCs)
 
 }
