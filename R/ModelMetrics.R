@@ -93,8 +93,9 @@ auc <- function(actual, predicted){
   if(class(actual) %in% c('factor', 'character')){
     actual = as.numeric(as.factor(as.character(actual))) - 1
   }
+  ranks <- .Internal(rank(predicted, length(predicted), "average"))
 
-  auc_(actual, predicted)
+  auc_(actual, predicted, ranks)
 }
 
 

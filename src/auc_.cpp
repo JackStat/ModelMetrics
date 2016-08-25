@@ -3,23 +3,10 @@ using namespace Rcpp;
 
 
 // [[Rcpp::export]]
-NumericVector sort_rcpp(NumericVector x) {
-  std::vector<double> tmp = Rcpp::as< std::vector<double> > (x);
-  std::sort(tmp.begin(), tmp.end());
-  return wrap(tmp);
-}
-
-// [[Rcpp::export]]
-IntegerVector rank(NumericVector x) {
-  return match(x, sort_rcpp(x));
-}
-
-// [[Rcpp::export]]
-double auc_(NumericVector actual, NumericVector predicted) {
+double auc_(NumericVector actual, NumericVector predicted, NumericVector ranks) {
 
   double n = actual.size();
 
-  IntegerVector Ranks = rank(predicted);
   double NPos = sum(actual == 1);
   double NNeg = (actual.size() - NPos);
 
@@ -27,7 +14,7 @@ double auc_(NumericVector actual, NumericVector predicted) {
 
   for(int i = 0; i < n; ++i) {
     if (actual[i] == 1){
-      sumranks = sumranks + Ranks[i];
+      sumranks = sumranks + ranks[i];
     }
   }
 
