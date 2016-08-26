@@ -47,14 +47,14 @@ s5 <- system.time({pp <- ROCR::prediction(Predicted, Actual); a5 <- ROCR::perfor
 
 data.frame(
   package = c("ModelMetrics", "pROC", "ROCR")
-  ,Time = c(s1[[3]],s3[[3]],s6[[3]])
+  ,Time = c(s1[[3]],s3[[3]],s5[[3]])
 )
 
 # MLmetrics and Metrics could not calculate so they are dropped from time comparison
 #        package   Time
-# 1 ModelMetrics  0.017
-# 2         pROC 53.162
-# 3         ROCR  0.257
+# 1 ModelMetrics  0.034
+# 2         pROC 85.289
+# 3         ROCR  0.565
 ```
 
 
