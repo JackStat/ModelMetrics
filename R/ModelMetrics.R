@@ -128,11 +128,12 @@ auc <- function(actual, predicted){
 
 mauc <- function(actual, predicted){
 
+  actual <- factor(actual)
   Data <- data.frame(predicted, actual)
   Outcomes <- length(unique(actual))
 
   simpleAUC <- function(x){
-    #Grab one-vs-all data for the class
+    # One-vs-all
     y1 = levels(Data$actual)[x]
     y  <- as.numeric(Data[, "actual"] == y1)
     prob <- Data[,x]
