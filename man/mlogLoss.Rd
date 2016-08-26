@@ -9,7 +9,7 @@ mlogLoss(actual, predicted)
 \arguments{
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
 
-\item{predicted}{matrix of predicted values}
+\item{predicted}{matrix of predicted values. Can be \code{matrix, data.frame}}
 }
 \description{
 Calculated the multi-class log loss

@@ -50,7 +50,7 @@ logLoss <- function(actual, predicted, distribution = "binomial"){
 #' @description Calculated the multi-class log loss
 #'
 #' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
-#' @param predicted matrix of predicted values
+#' @param predicted matrix of predicted values. Can be \code{matrix, data.frame}
 #'
 #' @export
 
@@ -104,7 +104,7 @@ auc <- function(actual, predicted){
 #' @description Calculates the area under the curve for a binary classifcation model
 #'
 #' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
-#' @param predicted A data.frame of predicted values
+#' @param predicted A data.frame of predicted values. Can be \code{matrix, data.frame}
 #'
 #'
 #' @examples

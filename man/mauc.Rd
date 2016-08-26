@@ -9,7 +9,7 @@ mauc(actual, predicted)
 \arguments{
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
 
-\item{predicted}{A data.frame of predicted values}
+\item{predicted}{A data.frame of predicted values. Can be \code{matrix, data.frame}}
 }
 \description{
 Calculates the area under the curve for a binary classifcation model
