@@ -93,9 +93,8 @@ auc <- function(actual, predicted){
   if(class(actual) %in% c('factor', 'character')){
     actual = as.numeric(as.factor(as.character(actual))) - 1
   }
-  ranks <- rank(predicted)
 
-  auc_(actual, predicted, ranks)
+  auc_(actual, predicted)
 }
 
 

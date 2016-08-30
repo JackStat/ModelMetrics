@@ -5,16 +5,26 @@
 
 using namespace Rcpp;
 
+// avg_rank
+NumericVector avg_rank(Rcpp::NumericVector x);
+RcppExport SEXP ModelMetrics_avg_rank(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(avg_rank(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // auc_
-double auc_(NumericVector actual, NumericVector predicted, NumericVector ranks);
-RcppExport SEXP ModelMetrics_auc_(SEXP actualSEXP, SEXP predictedSEXP, SEXP ranksSEXP) {
+double auc_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_auc_(SEXP actualSEXP, SEXP predictedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type ranks(ranksSEXP);
-    rcpp_result_gen = Rcpp::wrap(auc_(actual, predicted, ranks));
+    rcpp_result_gen = Rcpp::wrap(auc_(actual, predicted));
     return rcpp_result_gen;
 END_RCPP
 }

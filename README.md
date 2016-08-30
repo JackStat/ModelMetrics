@@ -52,9 +52,9 @@ data.frame(
 
 # MLmetrics and Metrics could not calculate so they are dropped from time comparison
 #        package   Time
-# 1 ModelMetrics  0.034
-# 2         pROC 85.289
-# 3         ROCR  0.565
+# 1 ModelMetrics  0.030
+# 2         pROC 50.359
+# 3         ROCR  0.358
 ```
 
 
