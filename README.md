@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/JackStat/ModelMetrics.svg?branch=master)](https://travis-ci.org/JackStat/ModelMetrics)
 [![Build status](https://ci.appveyor.com/api/projects/status/evm55ctrlwp6fjs3/branch/master?svg=true)](https://ci.appveyor.com/project/JackStat/modelmetrics/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/JackStat/ModelMetrics/badge.svg?branch=master)](https://coveralls.io/github/JackStat/ModelMetrics?branch=master)
+[![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/ModelMetrics)](http://cranlogs.r-pkg.org/badges/grand-total/ModelMetrics)
 
 Tyler Hunt thunt@snapfinance.com
 
