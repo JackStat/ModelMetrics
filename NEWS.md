@@ -8,4 +8,4 @@
 
 
 # ModelMetrics 1.0.0
-* Refactor `common_by()` (#1928).
+* Initializing package with basic metric functions
