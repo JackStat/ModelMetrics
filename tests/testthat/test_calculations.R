@@ -20,6 +20,13 @@ test_that("auc returns correct values", {
 
 })
 
+test_that("gini returns correct values", {
+
+  expect_equal(gini(testDF$y, Preds), 0.9745332, tolerance = .000001)
+  expect_equal(gini(c(testDF$y,testDF$y), c(Preds, Preds)), 0.9745332, tolerance = .000001)
+
+})
+
 
 test_that("rmse returns correct values", {
 
