@@ -5,6 +5,8 @@
 #' @param actual a binary vector of the labels
 #' @param predicted a vector of predicted values
 #' @param distribution the distribution of the loss function needed \code{binomial, poisson}
+#' @param \dots additional parameters to be passed the the s3 methods
+#' @param modelObject the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}
 #'
 #' @examples
 #' data(testDF)

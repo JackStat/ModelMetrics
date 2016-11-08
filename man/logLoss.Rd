@@ -12,6 +12,10 @@ logLoss(...)
 \item{predicted}{a vector of predicted values}
 
 \item{distribution}{the distribution of the loss function needed \code{binomial, poisson}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
+\item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
 }
 \description{
 Calculates the log loss or entropy loss for a binary outcome

@@ -10,6 +10,10 @@ auc(...)
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
 
 \item{predicted}{A vector of predicted values}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
+\item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
 }
 \description{
 Calculates the area under the curve for a binary classifcation model
