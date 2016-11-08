@@ -9,6 +9,7 @@ test_that("logLoss returns correct values", {
 
   expect_equal(logLoss(testDF$y, Preds), 0.1546854, tolerance = .000001)
   expect_equal(logLoss(testDF$y, Preds, 'poisson'), 0.6910357, tolerance = .000001)
+  expect_equal(logLoss(glmModel), 0.1546854, tolerance = .000001)
 
 })
 
@@ -17,6 +18,7 @@ test_that("auc returns correct values", {
 
   expect_equal(auc(testDF$y, Preds), 0.9872666, tolerance = .000001)
   expect_equal(auc(c(testDF$y,testDF$y), c(Preds, Preds)), 0.9872666, tolerance = .000001)
+  expect_equal(auc(glmModel), 0.9872666, tolerance = .000001)
 
 })
 
