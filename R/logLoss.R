@@ -62,3 +62,13 @@ logLoss.randomForest <- function(modelObject){
   logLoss.default(actual, predicted)
 }
 
+
+#' @export
+logLoss.glmerMod <- function(modelObject){
+
+  actual <- modelObject@resp$y
+  predicted <- modelObject@resp$mu
+
+  logLoss.default(actual, predicted)
+}
+

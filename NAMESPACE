@@ -2,9 +2,11 @@
 
 S3method(auc,default)
 S3method(auc,glm)
+S3method(auc,glmerMod)
 S3method(auc,randomForest)
 S3method(logLoss,default)
 S3method(logLoss,glm)
+S3method(logLoss,glmerMod)
 S3method(logLoss,randomForest)
 export(auc)
 export(brier)

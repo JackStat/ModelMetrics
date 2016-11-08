@@ -51,3 +51,13 @@ auc.randomForest <- function(modelObject){
 
   auc.default(actual, predicted)
 }
+
+
+#' @export
+auc.glmerMod <- function(modelObject){
+
+  actual <- modelObject@resp$y
+  predicted <- modelObject@resp$mu
+
+  auc.default(actual, predicted)
+}
