@@ -8,42 +8,6 @@ NULL
 #' @docType data
 NULL
 
-#' @title Log Loss
-#'
-#' @description Calculates the log loss or entropy loss for a binary outcome
-#'
-#' @param actual a binary vector of the labels
-#' @param predicted a vector of predicted values
-#' @param distribution the distribution of the loss function needed \code{binomial, poisson}
-#'
-#' @examples
-#' data(testDF)
-#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
-#' Preds <- predict(glmModel, type = 'response')
-#'
-#' logLoss(testDF$y, Preds)
-#'
-#' @export
-
-logLoss <- function(actual, predicted, distribution = "binomial"){
-
-  eps <- 1e-15
-  predicted = pmax(pmin(predicted, 1 - eps), eps)
-
-  if(distribution == "binomial"){
-
-    return(logLoss_(actual, predicted))
-
-  } else if(distribution == 'poisson'){
-
-    return(plogLoss_(actual, predicted))
-
-  } else {
-    stop(paste(distribution, "is not defined. Please use binomial or poisson"))
-  }
-
-}
-
 
 #' @title Multiclass Log Loss
 #'
@@ -67,34 +31,6 @@ mlogLoss <- function(actual, predicted){
   predicted = pmax(pmin(predicted, 1 - eps), eps)
 
   mlogLoss_(actual, predicted)
-}
-
-
-
-#' @title Area Under the Curve
-#'
-#' @description Calculates the area under the curve for a binary classifcation model
-#'
-#' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
-#' @param predicted A vector of predicted values
-#'
-#' @examples
-#' data(testDF)
-#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
-#' Preds <- predict(glmModel, type = 'response')
-#'
-#' auc(testDF$y, Preds)
-#'
-#' @export
-
-auc <- function(actual, predicted){
-
-  binaryChecks(actual, 'auc')
-  if(class(actual) %in% c('factor', 'character')){
-    actual = as.numeric(as.factor(as.character(actual))) - 1
-  }
-
-  auc_(actual, predicted)
 }
 
 
