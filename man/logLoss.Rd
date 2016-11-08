@@ -2,9 +2,24 @@
 % Please edit documentation in R/logLoss.R
 \name{logLoss}
 \alias{logLoss}
+\alias{logLoss.default}
+\alias{logLoss.gbm}
+\alias{logLoss.glm}
+\alias{logLoss.glmerMod}
+\alias{logLoss.randomForest}
 \title{Log Loss}
 \usage{
 logLoss(...)
+
+\method{logLoss}{default}(actual, predicted, distribution = "binomial", ...)
+
+\method{logLoss}{glm}(modelObject, ...)
+
+\method{logLoss}{randomForest}(modelObject, ...)
+
+\method{logLoss}{glmerMod}(modelObject, ...)
+
+\method{logLoss}{gbm}(modelObject, ...)
 }
 \arguments{
 \item{actual}{a binary vector of the labels}
@@ -13,9 +28,9 @@ logLoss(...)
 
 \item{distribution}{the distribution of the loss function needed \code{binomial, poisson}}
 
-\item{\dots}{additional parameters to be passed the the s3 methods}
-
 \item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the log loss or entropy loss for a binary outcome

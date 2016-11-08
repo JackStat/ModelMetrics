@@ -21,8 +21,9 @@ logLoss <- function(...){
   UseMethod("logLoss")
 }
 
+#' @rdname logLoss
 #' @export
-logLoss.default <- function(actual, predicted, distribution = "binomial"){
+logLoss.default <- function(actual, predicted, distribution = "binomial", ...){
 
   eps <- 1e-15
   predicted = pmax(pmin(predicted, 1 - eps), eps)
@@ -41,8 +42,9 @@ logLoss.default <- function(actual, predicted, distribution = "binomial"){
 
 }
 
+#' @rdname logLoss
 #' @export
-logLoss.glm <- function(modelObject){
+logLoss.glm <- function(modelObject, ...){
 
   family <- family(modelObject)[[1]]
   if(any(family %in% c('binomial', 'poisson'))){
@@ -55,8 +57,10 @@ logLoss.glm <- function(modelObject){
   logLoss.default(actual, predicted, distribution = family)
 }
 
+#' @importFrom stats predict
+#' @rdname logLoss
 #' @export
-logLoss.randomForest <- function(modelObject){
+logLoss.randomForest <- function(modelObject, ...){
 
   actual <- as.numeric(modelObject$y) - 1
   predicted <- predict(modelObject, type = 'prob')[,2]
@@ -64,8 +68,9 @@ logLoss.randomForest <- function(modelObject){
   logLoss.default(actual, predicted)
 }
 
+#' @rdname logLoss
 #' @export
-logLoss.glmerMod <- function(modelObject){
+logLoss.glmerMod <- function(modelObject, ...){
 
   actual <- modelObject@resp$y
   predicted <- modelObject@resp$mu
@@ -73,8 +78,9 @@ logLoss.glmerMod <- function(modelObject){
   logLoss.default(actual, predicted)
 }
 
+#' @rdname logLoss
 #' @export
-logLoss.gbm <- function(modelObject){
+logLoss.gbm <- function(modelObject, ...){
 
   actual <- modelObject$data$y
   predicted <- modelObject$fit

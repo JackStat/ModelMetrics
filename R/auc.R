@@ -20,8 +20,9 @@ auc <- function(...){
   UseMethod("auc")
 }
 
+#' @rdname auc
 #' @export
-auc.default <- function(actual, predicted){
+auc.default <- function(actual, predicted, ...){
 
   binaryChecks(actual, 'auc')
   if(class(actual) %in% c('factor', 'character')){
@@ -31,8 +32,9 @@ auc.default <- function(actual, predicted){
   auc_(actual, predicted)
 }
 
+#' @rdname auc
 #' @export
-auc.glm <- function(modelObject){
+auc.glm <- function(modelObject, ...){
 
   family <- family(modelObject)[[1]]
   if(any(family %in% c('binomial', 'poisson'))){
@@ -45,8 +47,9 @@ auc.glm <- function(modelObject){
   auc.default(actual, predicted)
 }
 
+#' @rdname auc
 #' @export
-auc.randomForest <- function(modelObject){
+auc.randomForest <- function(modelObject, ...){
 
   actual <- as.numeric(modelObject$y) - 1
   predicted <- predict(modelObject, type = 'prob')[,2]
@@ -54,8 +57,9 @@ auc.randomForest <- function(modelObject){
   auc.default(actual, predicted)
 }
 
+#' @rdname auc
 #' @export
-auc.glmerMod <- function(modelObject){
+auc.glmerMod <- function(modelObject, ...){
 
   actual <- modelObject@resp$y
   predicted <- modelObject@resp$mu
@@ -63,8 +67,9 @@ auc.glmerMod <- function(modelObject){
   auc.default(actual, predicted)
 }
 
+#' @rdname auc
 #' @export
-auc.gbm <- function(modelObject){
+auc.gbm <- function(modelObject, ...){
 
   actual <- modelObject$data$y
   predicted <- modelObject$fit

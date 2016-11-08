@@ -2,18 +2,33 @@
 % Please edit documentation in R/auc.R
 \name{auc}
 \alias{auc}
+\alias{auc.default}
+\alias{auc.gbm}
+\alias{auc.glm}
+\alias{auc.glmerMod}
+\alias{auc.randomForest}
 \title{Area Under the Curve}
 \usage{
 auc(...)
+
+\method{auc}{default}(actual, predicted, ...)
+
+\method{auc}{glm}(modelObject, ...)
+
+\method{auc}{randomForest}(modelObject, ...)
+
+\method{auc}{glmerMod}(modelObject, ...)
+
+\method{auc}{gbm}(modelObject, ...)
 }
 \arguments{
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
 
 \item{predicted}{A vector of predicted values}
 
-\item{\dots}{additional parameters to be passed the the s3 methods}
-
 \item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the area under the curve for a binary classifcation model
