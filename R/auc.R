@@ -42,3 +42,12 @@ auc.glm <- function(modelObject){
 
   auc.default(actual, predicted)
 }
+
+#' @export
+auc.randomForest <- function(modelObject){
+
+  actual <- as.numeric(modelObject$y) - 1
+  predicted <- predict(modelObject, type = 'prob')[,2]
+
+  auc.default(actual, predicted)
+}

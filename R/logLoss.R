@@ -52,3 +52,13 @@ logLoss.glm <- function(modelObject){
 
   logLoss.default(actual, predicted, distribution = family)
 }
+
+#' @export
+logLoss.randomForest <- function(modelObject){
+
+  actual <- as.numeric(modelObject$y) - 1
+  predicted <- predict(modelObject, type = 'prob')[,2]
+
+  logLoss.default(actual, predicted)
+}
+
