@@ -7,6 +7,7 @@
 \alias{auc.glm}
 \alias{auc.glmerMod}
 \alias{auc.randomForest}
+\alias{auc.rpart}
 \title{Area Under the Curve}
 \usage{
 auc(...)
@@ -20,6 +21,8 @@ auc(...)
 \method{auc}{glmerMod}(modelObject, ...)
 
 \method{auc}{gbm}(modelObject, ...)
+
+\method{auc}{rpart}(modelObject, ...)
 }
 \arguments{
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}

@@ -87,3 +87,13 @@ logLoss.gbm <- function(modelObject, ...){
 
   logLoss.default(actual, predicted)
 }
+
+#' @rdname logLoss
+#' @export
+logLoss.rpart <- function(modelObject, ...){
+
+  actual <- modelObject$y
+  predicted <- predict(modelObject)
+
+  logLoss.default(actual, predicted)
+}

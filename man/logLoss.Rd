@@ -7,6 +7,7 @@
 \alias{logLoss.glm}
 \alias{logLoss.glmerMod}
 \alias{logLoss.randomForest}
+\alias{logLoss.rpart}
 \title{Log Loss}
 \usage{
 logLoss(...)
@@ -20,6 +21,8 @@ logLoss(...)
 \method{logLoss}{glmerMod}(modelObject, ...)
 
 \method{logLoss}{gbm}(modelObject, ...)
+
+\method{logLoss}{rpart}(modelObject, ...)
 }
 \arguments{
 \item{actual}{a binary vector of the labels}

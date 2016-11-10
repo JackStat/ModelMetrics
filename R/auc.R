@@ -77,3 +77,13 @@ auc.gbm <- function(modelObject, ...){
   auc.default(actual, predicted)
 }
 
+#' @rdname auc
+#' @export
+auc.rpart <- function(modelObject, ...){
+
+  actual <- modelObject$y
+  predicted <- predict(modelObject)
+
+  auc.default(actual, predicted)
+}
+
