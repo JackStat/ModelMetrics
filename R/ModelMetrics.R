@@ -105,47 +105,6 @@ gini <- function(actual, predicted){
 }
 
 
-#' @title Mean Square Error
-#' @description Calculates the mean square error
-#'
-#' @param actual A vector of the labels
-#' @param predicted A vector of predicted values
-#'
-#' @examples
-#' data(testDF)
-#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
-#' Preds <- predict(glmModel, type = 'response')
-#'
-#' mse(testDF$y, Preds)
-#'
-#' @export
-
-mse <- function(actual, predicted){
-  mse_(actual, predicted)
-}
-
-
-#' @title Root-Mean Square Error
-#' @description Calculates the root mean square error
-#'
-#' @param actual A vector of the labels
-#' @param predicted A vector of predicted values
-#'
-#' @examples
-#' data(testDF)
-#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
-#' Preds <- predict(glmModel, type = 'response')
-#'
-#' rmse(testDF$y, Preds)
-#'
-#' @export
-
-rmse <- function(actual, predicted){
-  rmse_(actual, predicted)
-}
-
-
-
 #' @title Confusion Matrix
 #' @description Create a confusion matrix given a specific cutoff.
 #'

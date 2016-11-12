@@ -1,0 +1,78 @@
+#' @title Mean Square Error
+#' @description Calculates the mean square error
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param \dots additional parameters to be passed the the s3 methods
+#' @param modelObject the model object. Currently supported \code{lm}
+#'
+#' @examples
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' mse(testDF$y, Preds)
+#'
+#' @export
+
+mse <- function(...){
+  UseMethod("mse")
+}
+
+#' @rdname mse
+#' @export
+mse.default <- function(actual, predicted, ...){
+  mse_(actual, predicted)
+}
+
+#' @rdname mse
+#' @export
+mse.lm <- function(object, ...){
+
+  predicted <- object$fitted.values
+  actual <- object$residuals + predicted
+
+  mse.default(actual, predicted)
+}
+
+
+#' @title Root-Mean Square Error
+#' @description Calculates the root mean square error
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#'
+#' @examples
+#' data(testDF)
+#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
+#' Preds <- predict(glmModel, type = 'response')
+#'
+#' rmse(testDF$y, Preds)
+#'
+#' @export
+
+
+rmse <- function(...){
+  UseMethod("rmse")
+}
+
+#' @rdname rmse
+#' @export
+rmse.default <- function(actual, predicted){
+  rmse_(actual, predicted)
+}
+
+#' @rdname rmse
+#' @export
+rmse.lm <- function(object, ...){
+
+  predicted <- object$fitted.values
+  actual <- object$residuals + predicted
+
+  rmse.default(actual, predicted)
+}
+
+
+
+
+
