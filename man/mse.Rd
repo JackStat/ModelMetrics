@@ -10,16 +10,16 @@ mse(...)
 
 \method{mse}{default}(actual, predicted, ...)
 
-\method{mse}{lm}(object, ...)
+\method{mse}{lm}(modelObject, ...)
 }
 \arguments{
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
 
-\item{\dots}{additional parameters to be passed the the s3 methods}
-
 \item{modelObject}{the model object. Currently supported \code{lm}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the mean square error

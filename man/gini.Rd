@@ -12,7 +12,7 @@
 \usage{
 gini(...)
 
-\method{gini}{default}(actual, predicted)
+\method{gini}{default}(actual, predicted, ...)
 
 \method{gini}{glm}(modelObject, ...)
 
@@ -28,6 +28,10 @@ gini(...)
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
 
 \item{predicted}{A vector of predicted values}
+
+\item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the GINI coefficient for a binary classifcation model

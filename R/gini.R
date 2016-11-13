@@ -4,6 +4,8 @@
 #'
 #' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
 #' @param predicted A vector of predicted values
+#' @param \dots additional parameters to be passed the the s3 methods
+#' @param modelObject the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}
 #'
 #' @examples
 #' data(testDF)
@@ -20,7 +22,7 @@ gini <- function(...){
 
 #' @rdname gini
 #' @export
-gini.default <- function(actual, predicted){
+gini.default <- function(actual, predicted, ...){
 
   AUC <- auc(actual, predicted)
   gini <- 2*AUC - 1

@@ -8,14 +8,18 @@
 \usage{
 rmse(...)
 
-\method{rmse}{default}(actual, predicted)
+\method{rmse}{default}(actual, predicted, ...)
 
-\method{rmse}{lm}(object, ...)
+\method{rmse}{lm}(modelObject, ...)
 }
 \arguments{
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
+
+\item{modelObject}{the model object. Currently supported \code{lm}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the root mean square error

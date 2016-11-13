@@ -27,10 +27,10 @@ mse.default <- function(actual, predicted, ...){
 
 #' @rdname mse
 #' @export
-mse.lm <- function(object, ...){
+mse.lm <- function(modelObject, ...){
 
-  predicted <- object$fitted.values
-  actual <- object$residuals + predicted
+  predicted <- modelObject$fitted.values
+  actual <- modelObject$residuals + predicted
 
   mse.default(actual, predicted)
 }
@@ -41,6 +41,8 @@ mse.lm <- function(object, ...){
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
+#' @param \dots additional parameters to be passed the the s3 methods
+#' @param modelObject the model object. Currently supported \code{lm}
 #'
 #' @examples
 #' data(testDF)
@@ -58,16 +60,16 @@ rmse <- function(...){
 
 #' @rdname rmse
 #' @export
-rmse.default <- function(actual, predicted){
+rmse.default <- function(actual, predicted, ...){
   rmse_(actual, predicted)
 }
 
 #' @rdname rmse
 #' @export
-rmse.lm <- function(object, ...){
+rmse.lm <- function(modelObject, ...){
 
-  predicted <- object$fitted.values
-  actual <- object$residuals + predicted
+  predicted <- modelObject$fitted.values
+  actual <- modelObject$residuals + predicted
 
   rmse.default(actual, predicted)
 }
