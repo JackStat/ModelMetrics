@@ -81,29 +81,6 @@ mauc <- function(actual, predicted){
 
 }
 
-#' @title GINI Coefficient
-#'
-#' @description Calculates the GINI coefficient for a binary classifcation model
-#'
-#' @param actual A vector of the labels. Can be \code{numeric, character, or factor}
-#' @param predicted A vector of predicted values
-#'
-#' @examples
-#' data(testDF)
-#' glmModel <- glm(y ~ ., data = testDF, family="binomial")
-#' Preds <- predict(glmModel, type = 'response')
-#'
-#' gini(testDF$y, Preds)
-#'
-#' @export
-
-gini <- function(actual, predicted){
-
-  AUC <- auc(actual, predicted)
-  gini <- 2*AUC - 1
-  return(gini)
-}
-
 
 #' @title Confusion Matrix
 #' @description Create a confusion matrix given a specific cutoff.
