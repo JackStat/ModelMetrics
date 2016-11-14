@@ -109,6 +109,7 @@ test_that("mae returns correct values", {
 test_that("msle returns correct values", {
 
   expect_equal(msle(testDF$y, Preds), 0.02318011, tolerance = .000001)
+  expect_equal(msle(glmModel), 0.02318011, tolerance = .000001)
 
 })
 
@@ -116,6 +117,8 @@ test_that("msle returns correct values", {
 test_that("rmsle returns correct values", {
 
   expect_equal(rmsle(testDF$y, Preds), 0.2188343, tolerance = .000001)
+  expect_equal(rmsle(glmModel), 0.2188343, tolerance = .000001)
+
 
 })
 

@@ -270,35 +270,6 @@ ce <- function(actual, predicted){
 
 
 
-#' @title Mean Squared Log Error
-#' @description Calculates the mean square log error
-#'
-#' @param actual A vector of the labels
-#' @param predicted A vector of predicted values
-#'
-#' @export
-
-msle <- function(actual, predicted){
-  msle_(actual, predicted)
-}
-
-
-
-
-#' @title Root Mean Squared Log Error
-#' @description Calculates the mean square log error
-#'
-#' @param actual A vector of the labels
-#' @param predicted A vector of predicted values
-#'
-#' @export
-
-rmsle <- function(actual, predicted){
-  rmsle_(actual, predicted)
-}
-
-
-
 #' @title Brier Score
 #' @description Calculates the Brier score
 #'
