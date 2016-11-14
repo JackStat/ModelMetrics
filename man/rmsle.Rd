@@ -31,6 +31,10 @@ rmsle(...)
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
+
+\item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the mean square log error
