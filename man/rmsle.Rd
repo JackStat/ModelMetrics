@@ -13,7 +13,7 @@
 \usage{
 rmsle(...)
 
-\method{rmsle}{default}(actual, predicted)
+\method{rmsle}{default}(actual, predicted, ...)
 
 \method{rmsle}{lm}(modelObject, ...)
 
