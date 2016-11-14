@@ -14,7 +14,7 @@ rmsle <- function(...){
 
 #' @rdname rmsle
 #' @export
-rmsle.default <- function(actual, predicted){
+rmsle.default <- function(actual, predicted, ...){
   rmsle_(actual, predicted)
 }
 
