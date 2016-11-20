@@ -94,6 +94,7 @@ test_that("mcc returns correct values", {
 test_that("brier returns correct values", {
 
   expect_equal(brier(testDF$y, Preds), 0.04788846, tolerance = .000001)
+  expect_equal(brier(glmModel), 0.04788846, tolerance = .000001)
 
 })
 
