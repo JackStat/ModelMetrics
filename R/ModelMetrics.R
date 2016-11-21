@@ -236,23 +236,6 @@ f1Score <- function(actual, predicted, cutoff = .5){
 }
 
 
-
-#' @title Mean absolute error
-#' @description Calculates the mean absolute error
-#'
-#' @param actual A vector of the labels
-#' @param predicted A vector of predicted values
-#'
-#' @export
-
-mae <- function(actual, predicted){
-
-  mae_(actual, predicted)
-
-}
-
-
-
 #' @title Classification error
 #' @description Calculates the classification error
 #'
@@ -266,7 +249,6 @@ ce <- function(actual, predicted){
   ce_(actual, predicted)
 
 }
-
 
 
 #' @title Matthews Correlation Coefficient
