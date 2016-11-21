@@ -3,6 +3,8 @@
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
+#' @param \dots additional parameters to be passed the the s3 methods
+#' @param modelObject the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}
 #'
 #' @export
 
