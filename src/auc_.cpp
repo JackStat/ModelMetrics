@@ -1,4 +1,5 @@
 #include <Rcpp.h>
+#include <omp.h>
 using namespace Rcpp;
 
 class Comparator {
@@ -32,9 +33,11 @@ NumericVector avg_rank(Rcpp::NumericVector x)
     std::sort(w.begin(), w.end(), Comparator(x));
 
     Rcpp::NumericVector r = Rcpp::no_init_vector(sz);
+    #pragma omp parallel for
     for (R_xlen_t n, i = 0; i < sz; i += n) {
         n = 1;
         while (i + n < sz && x[w[i]] == x[w[i + n]]) ++n;
+        #pragma omp parallel for
         for (R_xlen_t k = 0; k < n; k++) {
             r[w[i + k]] = i + (n + 1) / 2.;
         }
@@ -54,6 +57,7 @@ double auc_(NumericVector actual, NumericVector predicted) {
 
   double sumranks = 0;
 
+  #pragma omp parallel for
   for(int i = 0; i < n; ++i) {
     if (actual[i] == 1){
       sumranks = sumranks + Ranks[i];
