@@ -18,7 +18,7 @@ double mlogLoss_(NumericVector actual, NumericMatrix predicted) {
   double Cols = predicted.ncol();
 
   NumericMatrix actualMat = NumericMatrix(Dimension(Rows, Cols));
-
+#pragma omp parallel for
   for(int i = 0; i < Rows; ++i) {
     actualMat(i, actual(i) - 1) = 1;
   }
