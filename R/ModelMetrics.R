@@ -247,13 +247,3 @@ f1Score <- function(actual, predicted, cutoff = .5){
 mcc <- function(actual, predicted, cutoff){
   mcc_(actual, predicted, cutoff)
 }
-
-
-
-#' @export
-Ranks <- function(x){
-  avg_rank(x)
-}
-
-
-
