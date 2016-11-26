@@ -11,6 +11,7 @@ Encoding: UTF-8
 LazyData: true
 LinkingTo: Rcpp
 Imports:
-    Rcpp
+    Rcpp,
+    data.table
 RoxygenNote: 5.0.1
 Suggests: testthat

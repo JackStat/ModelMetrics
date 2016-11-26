@@ -249,3 +249,11 @@ mcc <- function(actual, predicted, cutoff){
 }
 
 
+
+#' @export
+Ranks <- function(x){
+  avg_rank(x)
+}
+
+
+

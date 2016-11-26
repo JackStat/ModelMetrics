@@ -91,3 +91,27 @@ double auc2_(NumericVector actual, NumericVector predicted) {
 }
 
 
+// [[Rcpp::export]]
+double auc3_(NumericVector actual, NumericVector predicted, NumericVector ranks) {
+
+  double n = actual.size();
+
+  double NPos = sum(actual == 1);
+  double NNeg = (n - NPos);
+
+  double sumranks = 0;
+
+  #pragma omp parallel for
+  for(int i = 0; i < n; ++i) {
+    if (actual[i] == 1){
+      sumranks = sumranks + ranks[i];
+    }
+  }
+
+  double p1 = (sumranks - NPos*( NPos + 1 ) / 2);
+  double p2 = NPos*NNeg;
+
+  double auc =  p1 / p2;
+  return auc ;
+
+}

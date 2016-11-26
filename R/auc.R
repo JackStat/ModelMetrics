@@ -20,6 +20,7 @@ auc <- function(...){
   UseMethod("auc")
 }
 
+#' @importFrom data.table frankv
 #' @rdname auc
 #' @export
 auc.default <- function(actual, predicted, ...){
@@ -29,7 +30,8 @@ auc.default <- function(actual, predicted, ...){
     actual = as.numeric(as.factor(as.character(actual))) - 1
   }
 
-  auc_(actual, predicted)
+  ranks = frankv(predicted)
+  auc3_(actual, predicted, ranks)
 }
 
 #' @rdname auc
