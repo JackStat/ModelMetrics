@@ -31,6 +31,10 @@ ce(...)
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
+
+\item{modelObject}{the model object. Currently supported \code{lm, glm, randomForest, glmerMod, gbm, rpart}}
+
+\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the classification error
