@@ -26,6 +26,7 @@ test_that("gini returns correct values", {
 
   expect_equal(gini(testDF$y, Preds), 0.9745332, tolerance = .000001)
   expect_equal(gini(c(testDF$y,testDF$y), c(Preds, Preds)), 0.9745332, tolerance = .000001)
+  expect_equal(gini(glmModel), 0.9745332, tolerance = .000001)
 
 })
 
@@ -33,6 +34,7 @@ test_that("gini returns correct values", {
 test_that("rmse returns correct values", {
 
   expect_equal(rmse(testDF$y, Preds), 0.2188343, tolerance = .000001)
+  expect_equal(rmse(glmModel), 0.2188343, tolerance = .000001)
 
 })
 
@@ -40,6 +42,7 @@ test_that("rmse returns correct values", {
 test_that("mse returns correct values", {
 
   expect_equal(mse(testDF$y, Preds), 0.04788846, tolerance = .000001)
+  expect_equal(mse(glmModel), 0.04788846, tolerance = .000001)
 
 })
 
@@ -103,6 +106,7 @@ test_that("brier returns correct values", {
 test_that("mae returns correct values", {
 
   expect_equal(mae(testDF$y, Preds), 0.09440662, tolerance = .000001)
+  expect_equal(mae(glmModel), 0.09440662, tolerance = .000001)
 
 })
 

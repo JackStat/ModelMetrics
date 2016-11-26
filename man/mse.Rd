@@ -3,6 +3,7 @@
 \name{mse}
 \alias{mse}
 \alias{mse.default}
+\alias{mse.glm}
 \alias{mse.lm}
 \title{Mean Square Error}
 \usage{
@@ -11,6 +12,8 @@ mse(...)
 \method{mse}{default}(actual, predicted, ...)
 
 \method{mse}{lm}(modelObject, ...)
+
+\method{mse}{glm}(modelObject, ...)
 }
 \arguments{
 \item{actual}{A vector of the labels}

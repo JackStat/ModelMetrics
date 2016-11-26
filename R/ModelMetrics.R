@@ -219,7 +219,6 @@ specificity <- function(actual, predicted, cutoff = .5){
 }
 
 
-
 #' @title F1 Score
 #' @description Calculates the f1 score
 #'
@@ -232,21 +231,6 @@ specificity <- function(actual, predicted, cutoff = .5){
 f1Score <- function(actual, predicted, cutoff = .5){
 
   f1Score_(actual, predicted, cutoff)
-
-}
-
-
-#' @title Classification error
-#' @description Calculates the classification error
-#'
-#' @param actual A vector of the labels
-#' @param predicted A vector of predicted values
-#'
-#' @export
-
-ce <- function(actual, predicted){
-
-  ce_(actual, predicted)
 
 }
 

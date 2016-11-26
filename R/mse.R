@@ -35,6 +35,21 @@ mse.lm <- function(modelObject, ...){
   mse.default(actual, predicted)
 }
 
+#' @rdname mse
+#' @export
+mse.glm <- function(modelObject, ...){
+
+  family <- family(modelObject)[[1]]
+  if(any(family %in% c('binomial', 'poisson'))){
+    actual <- modelObject$y
+    predicted <- modelObject$fitted.values
+  } else {
+    stop(paste0("family: ", family, " is not currently supported"))
+  }
+
+  mse.default(actual, predicted)
+}
+
 
 #' @title Root-Mean Square Error
 #' @description Calculates the root mean square error
@@ -73,6 +88,22 @@ rmse.lm <- function(modelObject, ...){
 
   rmse.default(actual, predicted)
 }
+
+#' @rdname rmse
+#' @export
+rmse.glm <- function(modelObject, ...){
+
+  family <- family(modelObject)[[1]]
+  if(any(family %in% c('binomial', 'poisson'))){
+    actual <- modelObject$y
+    predicted <- modelObject$fitted.values
+  } else {
+    stop(paste0("family: ", family, " is not currently supported"))
+  }
+
+  rmse.default(actual, predicted)
+}
+
 
 
 

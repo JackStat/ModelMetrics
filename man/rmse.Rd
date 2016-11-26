@@ -3,6 +3,7 @@
 \name{rmse}
 \alias{rmse}
 \alias{rmse.default}
+\alias{rmse.glm}
 \alias{rmse.lm}
 \title{Root-Mean Square Error}
 \usage{
@@ -11,6 +12,8 @@ rmse(...)
 \method{rmse}{default}(actual, predicted, ...)
 
 \method{rmse}{lm}(modelObject, ...)
+
+\method{rmse}{glm}(modelObject, ...)
 }
 \arguments{
 \item{actual}{A vector of the labels}
