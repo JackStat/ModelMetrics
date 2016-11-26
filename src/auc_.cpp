@@ -72,4 +72,22 @@ double auc_(NumericVector actual, NumericVector predicted) {
 
 }
 
+// [[Rcpp::export]]
+double auc2_(NumericVector actual, NumericVector predicted) {
+
+  NumericVector Ranks = avg_rank(predicted);
+  double NPos = sum(actual == 1);
+  double NNeg = (actual.size() - NPos);
+  NumericVector xRanks = Ranks[actual == 1];
+
+  double sumranks = sum(xRanks);
+
+  double p1 = (sumranks - NPos*( NPos + 1 ) / 2);
+  double p2 = NPos*NNeg;
+
+  double auc =  p1 / p2;
+  return auc ;
+
+}
+
 

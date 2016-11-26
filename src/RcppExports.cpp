@@ -28,6 +28,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// auc2_
+double auc2_(NumericVector actual, NumericVector predicted);
+RcppExport SEXP ModelMetrics_auc2_(SEXP actualSEXP, SEXP predictedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    rcpp_result_gen = Rcpp::wrap(auc2_(actual, predicted));
+    return rcpp_result_gen;
+END_RCPP
+}
 // confusionMatrix_
 NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, double cutoff);
 RcppExport SEXP ModelMetrics_confusionMatrix_(SEXP actualSEXP, SEXP predictedSEXP, SEXP cutoffSEXP) {

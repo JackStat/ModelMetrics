@@ -9,6 +9,10 @@ auc_ <- function(actual, predicted) {
     .Call('ModelMetrics_auc_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
+auc2_ <- function(actual, predicted) {
+    .Call('ModelMetrics_auc2_', PACKAGE = 'ModelMetrics', actual, predicted)
+}
+
 confusionMatrix_ <- function(actual, predicted, cutoff) {
     .Call('ModelMetrics_confusionMatrix_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
