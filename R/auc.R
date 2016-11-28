@@ -37,7 +37,7 @@ auc.default <- function(actual, predicted, ...){
     ranks = frankv(predicted)
     AUC <- auc3_(actual, predicted, ranks)
   } else {
-    AUC <- auc_(actual, predicted, ranks)
+    AUC <- auc_(actual, predicted)
   }
   return(AUC)
 }
