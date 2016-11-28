@@ -112,6 +112,6 @@ double auc3_(NumericVector actual, NumericVector predicted, NumericVector ranks)
   double p2 = NPos*NNeg;
 
   double auc =  p1 / p2;
-  return auc ;
+  return auc;
 
 }

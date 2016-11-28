@@ -26,8 +26,11 @@ auc <- function(...){
 auc.default <- function(actual, predicted, ...){
 
   binaryChecks(actual, 'auc')
-  if(class(actual) %in% c('factor', 'character')){
-    actual = as.numeric(as.factor(as.character(actual))) - 1
+
+  if (inherits(actual, 'factor')) {
+    actual <- as.integer(actual) - 1L
+  } else if (inherits(actual, 'character')) {
+    actual <- as.integer(as.factor(actual)) - 1L
   }
 
   if(length(actual > 10000)){
