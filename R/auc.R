@@ -30,8 +30,13 @@ auc.default <- function(actual, predicted, ...){
     actual = as.numeric(as.factor(as.character(actual))) - 1
   }
 
-  ranks = frankv(predicted)
-  auc3_(actual, predicted, ranks)
+  if(length(actual > 10000)){
+    ranks = frankv(predicted)
+    AUC <- auc3_(actual, predicted, ranks)
+  } else {
+    AUC <- auc_(actual, predicted, ranks)
+  }
+  return(AUC)
 }
 
 #' @rdname auc
