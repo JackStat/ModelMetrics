@@ -73,6 +73,10 @@ rmse_ <- function(actual, predicted) {
     .Call('ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
+gini_ <- function(actual) {
+    .Call('ModelMetrics_gini_', PACKAGE = 'ModelMetrics', actual)
+}
+
 logLoss_ <- function(actual, predicted) {
     .Call('ModelMetrics_logLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
 }

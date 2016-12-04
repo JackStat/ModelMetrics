@@ -21,11 +21,15 @@ gini <- function(...){
 }
 
 #' @rdname gini
+#' @importFrom data.table fsort
 #' @export
 gini.default <- function(actual, predicted, ...){
 
-  AUC <- auc(actual, predicted)
-  gini <- 2*AUC - 1
+  df1 <- data.frame(actual = actual, predicted = predicted)
+  df2 <- data.frame(actual = actual, predicted = actual)
+  df1 <- df1[order(-df1$predicted),]
+  df2 <- df2[order(-df2$actual),]
+  gini <- gini_(df1$actual)/gini_(df2$actual)
   return(gini)
 }
 

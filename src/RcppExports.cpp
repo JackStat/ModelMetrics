@@ -228,6 +228,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// gini_
+double gini_(NumericVector actual);
+RcppExport SEXP ModelMetrics_gini_(SEXP actualSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    rcpp_result_gen = Rcpp::wrap(gini_(actual));
+    return rcpp_result_gen;
+END_RCPP
+}
 // logLoss_
 double logLoss_(NumericVector actual, NumericVector predicted);
 RcppExport SEXP ModelMetrics_logLoss_(SEXP actualSEXP, SEXP predictedSEXP) {
