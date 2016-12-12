@@ -13,6 +13,8 @@
 #' Preds <- predict(glmModel, type = 'response')
 #'
 #' gini(testDF$y, Preds)
+#' # using s3 method for glm
+#' gini(glmModel)
 #'
 #' @export
 

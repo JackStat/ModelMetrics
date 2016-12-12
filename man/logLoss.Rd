@@ -44,6 +44,8 @@ glmModel <- glm(y ~ ., data = testDF, family="binomial")
 Preds <- predict(glmModel, type = 'response')
 
 logLoss(testDF$y, Preds)
+# using s3 method for glm
+logLoss(glmModel)
 
 }
 
