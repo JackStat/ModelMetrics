@@ -1,3 +1,9 @@
+# ModelMetrics 1.2.0
+
+* added s3 methods for `glm`, `lm`, `randomForest`, `merMod`, and `glmerMod`
+* sped up `auc` with `data.table::frankv`
+* added `gini`
+
 # ModelMetrics 1.1.0
 
 * added Matthews correlation coefficient (`mcc`)
