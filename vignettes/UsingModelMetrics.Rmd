@@ -25,6 +25,9 @@ logLoss(actual = testDF$y, predicted = probs)
 ## RMSE
 rmse(actual = testDF$y, predicted = probs)
 
+## gini
+gini(actual = testDF$y, predicted = probs)
+
 ```
 
 There are also a couple S3 methods that save a bit of code writing.
