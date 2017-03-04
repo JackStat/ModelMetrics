@@ -247,3 +247,21 @@ f1Score <- function(actual, predicted, cutoff = .5){
 mcc <- function(actual, predicted, cutoff){
   mcc_(actual, predicted, cutoff)
 }
+
+
+
+
+#' @title kappa statistic
+#'
+#' @description Calculates kappa statistic.
+#'
+#' @param actual A vector of the labels
+#' @param predicted A vector of predicted values
+#' @param cutoff A cutoff for the predicted values
+#'
+#' @export
+
+kappa <- function(actual, predicted, cutoff = .5){
+  kappa_(actual, predicted, cutoff)
+}
+
