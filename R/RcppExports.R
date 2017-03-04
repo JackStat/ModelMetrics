@@ -49,6 +49,10 @@ mcc_ <- function(actual, predicted, cutoff) {
     .Call('ModelMetrics_mcc_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
+kappa_ <- function(actual, predicted, cutoff) {
+    .Call('ModelMetrics_kappa_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+}
+
 mae_ <- function(actual, predicted) {
     .Call('ModelMetrics_mae_', PACKAGE = 'ModelMetrics', actual, predicted)
 }

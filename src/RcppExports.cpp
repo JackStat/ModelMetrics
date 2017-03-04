@@ -156,6 +156,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// kappa_
+double kappa_(NumericVector actual, NumericVector predicted, double cutoff);
+RcppExport SEXP ModelMetrics_kappa_(SEXP actualSEXP, SEXP predictedSEXP, SEXP cutoffSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    Rcpp::traits::input_parameter< double >::type cutoff(cutoffSEXP);
+    rcpp_result_gen = Rcpp::wrap(kappa_(actual, predicted, cutoff));
+    return rcpp_result_gen;
+END_RCPP
+}
 // mae_
 double mae_(NumericVector actual, NumericVector predicted);
 RcppExport SEXP ModelMetrics_mae_(SEXP actualSEXP, SEXP predictedSEXP) {
