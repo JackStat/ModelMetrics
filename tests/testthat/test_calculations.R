@@ -128,3 +128,29 @@ test_that("rmsle returns correct values", {
 })
 
 
+test_that("rmsle returns correct values", {
+
+  A <- c(rep(1, 63), rep(0, 31))
+  B <- c(rep(1, 61), rep(0, 25), rep(1, 6), rep(0, 2))
+
+  tab <- table(A, B)
+
+  a = tab[2,2]
+  b = tab[2,1]
+  c = tab[1,2]
+  d = tab[1,1]
+
+  marginA = ((a + b)*(a + c))/(a + b + c + d)
+  marginB = ((c + d)*(b + d))/(a + b + c + d)
+
+  Pe = (marginA + marginB)/(a + b + c + d)
+  Po = (a + d)/(a + b + c + d)
+
+  manualKappa = (Po - Pe)/(1 - Pe)
+
+  expect_equal(kappa(A, B), manualKappa, tolerance = .000001)
+
+
+})
+
+
