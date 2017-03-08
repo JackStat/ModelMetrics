@@ -253,7 +253,7 @@ mcc <- function(actual, predicted, cutoff){
 
 #' @title kappa statistic
 #'
-#' @description Calculates kappa statistic.
+#' @description Calculates kappa statistic. Currently build to handle binary values in \code{actual} vector.
 #'
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values

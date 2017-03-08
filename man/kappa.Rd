@@ -14,6 +14,6 @@ kappa(actual, predicted, cutoff = 0.5)
 \item{cutoff}{A cutoff for the predicted values}
 }
 \description{
-Calculates kappa statistic.
+Calculates kappa statistic. Currently build to handle binary values in \code{actual} vector.
 }
 
