@@ -3,10 +3,10 @@
 \name{auc}
 \alias{auc}
 \alias{auc.default}
-\alias{auc.gbm}
 \alias{auc.glm}
-\alias{auc.glmerMod}
 \alias{auc.randomForest}
+\alias{auc.glmerMod}
+\alias{auc.gbm}
 \alias{auc.rpart}
 \title{Area Under the Curve}
 \usage{
@@ -25,13 +25,13 @@ auc(...)
 \method{auc}{rpart}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{A vector of the labels. Can be \code{numeric, character, or factor}}
 
 \item{predicted}{A vector of predicted values}
 
 \item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the area under the curve for a binary classifcation model
@@ -47,4 +47,3 @@ auc(glmModel)
 
 
 }
-

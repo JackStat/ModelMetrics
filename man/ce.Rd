@@ -3,11 +3,11 @@
 \name{ce}
 \alias{ce}
 \alias{ce.default}
-\alias{ce.gbm}
-\alias{ce.glm}
-\alias{ce.glmerMod}
 \alias{ce.lm}
+\alias{ce.glm}
 \alias{ce.randomForest}
+\alias{ce.glmerMod}
+\alias{ce.gbm}
 \alias{ce.rpart}
 \title{Classification error}
 \usage{
@@ -28,15 +28,14 @@ ce(...)
 \method{ce}{rpart}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
 
 \item{modelObject}{the model object. Currently supported \code{lm, glm, randomForest, glmerMod, gbm, rpart}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the classification error
 }
-

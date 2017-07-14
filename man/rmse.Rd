@@ -3,8 +3,8 @@
 \name{rmse}
 \alias{rmse}
 \alias{rmse.default}
-\alias{rmse.glm}
 \alias{rmse.lm}
+\alias{rmse.glm}
 \title{Root-Mean Square Error}
 \usage{
 rmse(...)
@@ -16,13 +16,13 @@ rmse(...)
 \method{rmse}{glm}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
 
 \item{modelObject}{the model object. Currently supported \code{lm}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the root mean square error
@@ -35,4 +35,3 @@ Preds <- predict(glmModel, type = 'response')
 rmse(testDF$y, Preds)
 
 }
-

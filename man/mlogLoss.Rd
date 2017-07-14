@@ -14,4 +14,3 @@ mlogLoss(actual, predicted)
 \description{
 Calculated the multi-class log loss
 }
-

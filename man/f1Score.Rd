@@ -16,4 +16,3 @@ f1Score(actual, predicted, cutoff = 0.5)
 \description{
 Calculates the f1 score
 }
-

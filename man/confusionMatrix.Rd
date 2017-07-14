@@ -16,4 +16,3 @@ confusionMatrix(actual, predicted, cutoff = 0.5)
 \description{
 Create a confusion matrix given a specific cutoff.
 }
-

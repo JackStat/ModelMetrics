@@ -3,8 +3,8 @@
 \name{mse}
 \alias{mse}
 \alias{mse.default}
-\alias{mse.glm}
 \alias{mse.lm}
+\alias{mse.glm}
 \title{Mean Square Error}
 \usage{
 mse(...)
@@ -16,13 +16,13 @@ mse(...)
 \method{mse}{glm}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
 
 \item{modelObject}{the model object. Currently supported \code{lm}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the mean square error
@@ -35,4 +35,3 @@ Preds <- predict(glmModel, type = 'response')
 mse(testDF$y, Preds)
 
 }
-

@@ -3,11 +3,11 @@
 \name{rmsle}
 \alias{rmsle}
 \alias{rmsle.default}
-\alias{rmsle.gbm}
-\alias{rmsle.glm}
-\alias{rmsle.glmerMod}
 \alias{rmsle.lm}
+\alias{rmsle.glm}
 \alias{rmsle.randomForest}
+\alias{rmsle.glmerMod}
+\alias{rmsle.gbm}
 \alias{rmsle.rpart}
 \title{Root Mean Squared Log Error}
 \usage{
@@ -28,15 +28,14 @@ rmsle(...)
 \method{rmsle}{rpart}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
 
 \item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the mean square log error
 }
-

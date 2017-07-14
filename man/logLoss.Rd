@@ -3,10 +3,10 @@
 \name{logLoss}
 \alias{logLoss}
 \alias{logLoss.default}
-\alias{logLoss.gbm}
 \alias{logLoss.glm}
-\alias{logLoss.glmerMod}
 \alias{logLoss.randomForest}
+\alias{logLoss.glmerMod}
+\alias{logLoss.gbm}
 \alias{logLoss.rpart}
 \title{Log Loss}
 \usage{
@@ -25,6 +25,8 @@ logLoss(...)
 \method{logLoss}{rpart}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{a binary vector of the labels}
 
 \item{predicted}{a vector of predicted values}
@@ -32,8 +34,6 @@ logLoss(...)
 \item{distribution}{the distribution of the loss function needed \code{binomial, poisson}}
 
 \item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the log loss or entropy loss for a binary outcome
@@ -48,4 +48,3 @@ logLoss(testDF$y, Preds)
 logLoss(glmModel)
 
 }
-

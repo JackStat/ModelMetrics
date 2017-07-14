@@ -16,4 +16,3 @@ mcc(actual, predicted, cutoff)
 \description{
 Calculates the Matthews Correlation Coefficient
 }
-

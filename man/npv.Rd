@@ -24,4 +24,3 @@ Preds <- predict(glmModel, type = 'response')
 npv(testDF$y, Preds, cutoff = 0)
 
 }
-

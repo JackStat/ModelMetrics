@@ -3,11 +3,11 @@
 \name{msle}
 \alias{msle}
 \alias{msle.default}
-\alias{msle.gbm}
-\alias{msle.glm}
-\alias{msle.glmerMod}
 \alias{msle.lm}
+\alias{msle.glm}
 \alias{msle.randomForest}
+\alias{msle.glmerMod}
+\alias{msle.gbm}
 \alias{msle.rpart}
 \title{Mean Squared Log Error}
 \usage{
@@ -28,15 +28,14 @@ msle(...)
 \method{msle}{rpart}(modelObject, ...)
 }
 \arguments{
+\item{\dots}{additional parameters to be passed the the s3 methods}
+
 \item{actual}{A vector of the labels}
 
 \item{predicted}{A vector of predicted values}
 
 \item{modelObject}{the model object. Currently supported \code{glm, randomForest, glmerMod, gbm}}
-
-\item{\dots}{additional parameters to be passed the the s3 methods}
 }
 \description{
 Calculates the mean square log error
 }
-
