@@ -51,7 +51,7 @@ double msle_(NumericVector actual, NumericVector predicted) {
 // [[Rcpp::export]]
 double rmsle_(NumericVector actual, NumericVector predicted) {
 
-  double rmsle = sqrt(mse_(actual, predicted));
+  double rmsle = sqrt(msle_(actual, predicted));
   return rmsle;
 
 }

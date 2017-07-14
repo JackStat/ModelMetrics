@@ -2,94 +2,94 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 avg_rank <- function(x) {
-    .Call('ModelMetrics_avg_rank', PACKAGE = 'ModelMetrics', x)
+    .Call('_ModelMetrics_avg_rank', PACKAGE = 'ModelMetrics', x)
 }
 
 auc_ <- function(actual, predicted) {
-    .Call('ModelMetrics_auc_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_auc_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 auc2_ <- function(actual, predicted) {
-    .Call('ModelMetrics_auc2_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_auc2_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 auc3_ <- function(actual, predicted, ranks) {
-    .Call('ModelMetrics_auc3_', PACKAGE = 'ModelMetrics', actual, predicted, ranks)
+    .Call('_ModelMetrics_auc3_', PACKAGE = 'ModelMetrics', actual, predicted, ranks)
 }
 
 confusionMatrix_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_confusionMatrix_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_confusionMatrix_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 ppv_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_ppv_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_ppv_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 npv_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_npv_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_npv_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 tnr_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_tnr_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_tnr_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 recall_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_recall_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_recall_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 f1Score_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_f1Score_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_f1Score_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 brier_ <- function(actual, predicted) {
-    .Call('ModelMetrics_brier_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_brier_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 mcc_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_mcc_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_mcc_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 kappa_ <- function(actual, predicted, cutoff) {
-    .Call('ModelMetrics_kappa_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+    .Call('_ModelMetrics_kappa_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
 mae_ <- function(actual, predicted) {
-    .Call('ModelMetrics_mae_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_mae_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 ce_ <- function(actual, predicted) {
-    .Call('ModelMetrics_ce_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_ce_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 mse_ <- function(actual, predicted) {
-    .Call('ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_mse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 msle_ <- function(actual, predicted) {
-    .Call('ModelMetrics_msle_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_msle_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 rmsle_ <- function(actual, predicted) {
-    .Call('ModelMetrics_rmsle_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_rmsle_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 rmse_ <- function(actual, predicted) {
-    .Call('ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_rmse_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 gini_ <- function(actual) {
-    .Call('ModelMetrics_gini_', PACKAGE = 'ModelMetrics', actual)
+    .Call('_ModelMetrics_gini_', PACKAGE = 'ModelMetrics', actual)
 }
 
 logLoss_ <- function(actual, predicted) {
-    .Call('ModelMetrics_logLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_logLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 mlogLoss_ <- function(actual, predicted) {
-    .Call('ModelMetrics_mlogLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_mlogLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
 plogLoss_ <- function(actual, predicted) {
-    .Call('ModelMetrics_plogLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
+    .Call('_ModelMetrics_plogLoss_', PACKAGE = 'ModelMetrics', actual, predicted)
 }
 
