@@ -74,6 +74,22 @@ double recall_(NumericVector actual, NumericVector predicted, double cutoff) {
 
 }
 
+
+// [[Rcpp::export]]
+double fScore_(NumericVector actual, NumericVector predicted, double cutoff, double beta){
+
+  double p = ppv_(actual, predicted, cutoff);
+  double r = recall_(actual, predicted, cutoff);
+  double F = 0;
+
+  if(p + r != 0){
+    F = ((beta*beta + 1)*(p * r / (beta*beta*p + r)));
+  }
+
+  return F;
+}
+
+
 // [[Rcpp::export]]
 double f1Score_(NumericVector actual, NumericVector predicted, double cutoff){
 

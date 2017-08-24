@@ -37,6 +37,10 @@ recall_ <- function(actual, predicted, cutoff) {
     .Call('_ModelMetrics_recall_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }
 
+fScore_ <- function(actual, predicted, cutoff, beta) {
+    .Call('_ModelMetrics_fScore_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff, beta)
+}
+
 f1Score_ <- function(actual, predicted, cutoff) {
     .Call('_ModelMetrics_f1Score_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
 }

@@ -118,6 +118,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// fScore_
+double fScore_(NumericVector actual, NumericVector predicted, double cutoff, double beta);
+RcppExport SEXP _ModelMetrics_fScore_(SEXP actualSEXP, SEXP predictedSEXP, SEXP cutoffSEXP, SEXP betaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
+    Rcpp::traits::input_parameter< double >::type cutoff(cutoffSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(fScore_(actual, predicted, cutoff, beta));
+    return rcpp_result_gen;
+END_RCPP
+}
 // f1Score_
 double f1Score_(NumericVector actual, NumericVector predicted, double cutoff);
 RcppExport SEXP _ModelMetrics_f1Score_(SEXP actualSEXP, SEXP predictedSEXP, SEXP cutoffSEXP) {
@@ -299,6 +313,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ModelMetrics_npv_", (DL_FUNC) &_ModelMetrics_npv_, 3},
     {"_ModelMetrics_tnr_", (DL_FUNC) &_ModelMetrics_tnr_, 3},
     {"_ModelMetrics_recall_", (DL_FUNC) &_ModelMetrics_recall_, 3},
+    {"_ModelMetrics_fScore_", (DL_FUNC) &_ModelMetrics_fScore_, 4},
     {"_ModelMetrics_f1Score_", (DL_FUNC) &_ModelMetrics_f1Score_, 3},
     {"_ModelMetrics_brier_", (DL_FUNC) &_ModelMetrics_brier_, 2},
     {"_ModelMetrics_mcc_", (DL_FUNC) &_ModelMetrics_mcc_, 3},

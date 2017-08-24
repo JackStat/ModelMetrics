@@ -87,6 +87,12 @@ test_that("f1 score returns correct values", {
 
 })
 
+test_that("f1 score and F score agree with beta 1", {
+
+  expect_equal(f1Score(testDF$y, Preds, .5), fScore(testDF$y, Preds, .5, 1), tolerance = .000001)
+
+})
+
 test_that("mcc returns correct values", {
 
   expect_equal(mcc(testDF$y, Preds, .5), 0.8508762, tolerance = .000001)
