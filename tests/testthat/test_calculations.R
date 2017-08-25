@@ -87,7 +87,7 @@ test_that("f1 score returns correct values", {
 
 })
 
-test_that("f1 score and F score agree with beta 1", {
+test_that("f1 score and F score agree with beta 1 (default value)", {
 
   expect_equal(f1Score(testDF$y, Preds, .5), fScore(testDF$y, Preds, .5, 1), tolerance = .000001)
 

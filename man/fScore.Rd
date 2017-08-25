@@ -4,7 +4,7 @@
 \alias{fScore}
 \title{F Score}
 \usage{
-fScore(actual, predicted, cutoff = 0.5, beta = 0.5)
+fScore(actual, predicted, cutoff = 0.5, beta = 1)
 }
 \arguments{
 \item{actual}{A vector of the labels}
@@ -13,7 +13,7 @@ fScore(actual, predicted, cutoff = 0.5, beta = 0.5)
 
 \item{cutoff}{A cutoff for the predicted values}
 
-\item{beta}{the desired beta value (lower increases weight of precision over recall)}
+\item{beta}{the desired beta value (lower increases weight of precision over recall). Defaults to 1}
 }
 \description{
 Calculates the F score and allows different specifications of the beta value (F0.5)

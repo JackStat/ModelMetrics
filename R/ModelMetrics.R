@@ -240,11 +240,11 @@ f1Score <- function(actual, predicted, cutoff = .5){
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
-#' @param beta the desired beta value (lower increases weight of precision over recall)
+#' @param beta the desired beta value (lower increases weight of precision over recall). Defaults to 1
 #'
 #' @export
 
-fScore <- function(actual, predicted, cutoff = .5, beta = .5){
+fScore <- function(actual, predicted, cutoff = .5, beta = 1){
 
   fScore_(actual, predicted, cutoff, beta)
 
