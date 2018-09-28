@@ -15,7 +15,7 @@ double gini_(NumericVector actual) {
   Rcpp::NumericVector giniVector = Rcpp::no_init_vector(n);
 
   #pragma omp parallel for
-  for(int i = 0; i < n; ++i) {
+  for(int i = 0; i < (int) n; ++i) {
     if(i == 0){
       giniVector[i] = (accum_loss[i] - pop_delta);
     } else {
