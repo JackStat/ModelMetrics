@@ -58,7 +58,7 @@ double auc_(NumericVector actual, NumericVector predicted) {
   double sumranks = 0;
 
   #pragma omp parallel for
-  for(int i = 0; i < n; ++i) {
+  for(int i = 0; i < (int) n; ++i) {
     if (actual[i] == 1){
       sumranks = sumranks + Ranks[i];
     }
@@ -102,7 +102,7 @@ double auc3_(NumericVector actual, NumericVector predicted, NumericVector ranks)
   double sumranks = 0;
 
   #pragma omp parallel for
-  for(int i = 0; i < n; ++i) {
+  for(int i = 0; i < (int) n; ++i) {
     if (actual[i] == 1){
       sumranks = sumranks + ranks[i];
     }

@@ -14,7 +14,7 @@ double ce_(NumericVector actual, NumericVector predicted) {
   double Rows = predicted.size();
   double ErrorCount = 0;
 #pragma omp parallel for
-  for(int i = 0; i < Rows; ++i) {
+  for(int i = 0; i < (int) Rows; ++i) {
     if(actual(i) != predicted(i)) {
       ErrorCount = ErrorCount + 1;
     }
