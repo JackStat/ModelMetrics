@@ -33,8 +33,9 @@ NumericVector avg_rank(Rcpp::NumericVector x)
     std::sort(w.begin(), w.end(), Comparator(x));
 
     Rcpp::NumericVector r = Rcpp::no_init_vector(sz);
+    R_xlen_t n;
     #pragma omp parallel for
-    for (R_xlen_t n, i = 0; i < sz; i += n) {
+    for (int i = 0; i < sz; i += n) {
         n = 1;
         while (i + n < sz && x[w[i]] == x[w[i + n]]) ++n;
         #pragma omp parallel for
