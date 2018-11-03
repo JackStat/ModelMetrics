@@ -97,9 +97,9 @@ confusionMatrix <- function(actual, predicted, cutoff = .5){
 
 
 
-#' @title Postive Predictive Value
+#' @title Positive Predictive Value
 #'
-#' @description True Postives / (True Positives + False Positives)
+#' @description True Positives / (True Positives + False Positives)
 #'
 #' @aliases precision
 #'
