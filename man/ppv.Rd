@@ -3,7 +3,7 @@
 \name{ppv}
 \alias{ppv}
 \alias{precision}
-\title{Postive Predictive Value}
+\title{Positive Predictive Value}
 \usage{
 ppv(actual, predicted, cutoff = 0.5)
 }
@@ -15,7 +15,7 @@ ppv(actual, predicted, cutoff = 0.5)
 \item{cutoff}{A cutoff for the predicted values}
 }
 \description{
-True Postives / (True Positives + False Positives)
+True Positives / (True Positives + False Positives)
 }
 \examples{
 data(testDF)
