@@ -12,7 +12,8 @@
 \usage{
 logLoss(...)
 
-\method{logLoss}{default}(actual, predicted, distribution = "binomial", ...)
+\method{logLoss}{default}(actual, predicted, distribution = "binomial",
+  ...)
 
 \method{logLoss}{glm}(modelObject, ...)
 
