@@ -23,7 +23,7 @@ mlogLoss <- function(actual, predicted){
   if(any(class(actual) %in% c('factor', 'character'))){
     actual = as.numeric(as.factor(actual))
   }
-  if(c('data.frame') %in% class(predicted)){
+  if(any(class(predicted) %in% c('data.frame'))){
     predicted = as.matrix(predicted)
   }
 
