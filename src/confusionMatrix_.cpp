@@ -54,10 +54,9 @@ double npv_(NumericVector actual, NumericVector predicted, double cutoff) {
 // [[Rcpp::export]]
 double tnr_(NumericVector actual, NumericVector predicted, double cutoff) {
 
-  double TN = sum((predicted < cutoff) & (actual == 0));
-  double N = sum(actual == 0);
-  double tnr = TN/N;
+  NumericMatrix cMat = confusionMatrix_(actual, predicted, cutoff);
 
+  double tnr = cMat(0,0) / (cMat(0,0) + cMat(1,0));
   return tnr;
 
 }
