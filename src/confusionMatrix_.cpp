@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, double cutoff) {
+NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, double cutoff, bool use_names = false) {
 
   NumericMatrix cMat = NumericMatrix(Dimension(2, 2));
 
@@ -14,6 +14,11 @@ NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, do
   cMat(1,0) = sum((predicted > cutoff) & (actual == 0));
   // True positives
   cMat(1,1) = sum((predicted > cutoff) & (actual == 1));
+
+  if (use_names) {
+    colnames(cMat) = CharacterVector::create("actual_0", "actual_1");
+    rownames(cMat) = CharacterVector::create("predicted_0", "predicted_1");
+  }
 
   return cMat;
 

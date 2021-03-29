@@ -88,11 +88,21 @@ mauc <- function(actual, predicted){
 #' @param actual A vector of the labels
 #' @param predicted A vector of predicted values
 #' @param cutoff A cutoff for the predicted values
+#' @param use_names If \code{TRUE}, the dimnames of the output matrix will be labelled to indicate
+#'   which axes show the actual and predicted classes.
+#'
+#' @examples
+#' actual <- c(0, 0, 1)
+#' predicted <- c(1, 0, 1)
+#'
+#' confusionMatrix(actual, predicted)
+#'
+#' confusionMatrix(actual, predicted, use_names = TRUE)
 #'
 #' @export
 
-confusionMatrix <- function(actual, predicted, cutoff = .5){
-  confusionMatrix_(actual, predicted, cutoff)
+confusionMatrix <- function(actual, predicted, cutoff = .5, use_names = FALSE){
+  confusionMatrix_(actual, predicted, cutoff, use_names)
 }
 
 

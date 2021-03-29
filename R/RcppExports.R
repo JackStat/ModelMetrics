@@ -17,8 +17,8 @@ auc3_ <- function(actual, predicted, ranks) {
     .Call('_ModelMetrics_auc3_', PACKAGE = 'ModelMetrics', actual, predicted, ranks)
 }
 
-confusionMatrix_ <- function(actual, predicted, cutoff) {
-    .Call('_ModelMetrics_confusionMatrix_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff)
+confusionMatrix_ <- function(actual, predicted, cutoff, use_names = FALSE) {
+    .Call('_ModelMetrics_confusionMatrix_', PACKAGE = 'ModelMetrics', actual, predicted, cutoff, use_names)
 }
 
 ppv_ <- function(actual, predicted, cutoff) {
