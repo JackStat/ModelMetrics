@@ -54,15 +54,16 @@ BEGIN_RCPP
 END_RCPP
 }
 // confusionMatrix_
-NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, double cutoff);
-RcppExport SEXP _ModelMetrics_confusionMatrix_(SEXP actualSEXP, SEXP predictedSEXP, SEXP cutoffSEXP) {
+NumericMatrix confusionMatrix_(NumericVector actual, NumericVector predicted, double cutoff, bool use_names);
+RcppExport SEXP _ModelMetrics_confusionMatrix_(SEXP actualSEXP, SEXP predictedSEXP, SEXP cutoffSEXP, SEXP use_namesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type actual(actualSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type predicted(predictedSEXP);
     Rcpp::traits::input_parameter< double >::type cutoff(cutoffSEXP);
-    rcpp_result_gen = Rcpp::wrap(confusionMatrix_(actual, predicted, cutoff));
+    Rcpp::traits::input_parameter< bool >::type use_names(use_namesSEXP);
+    rcpp_result_gen = Rcpp::wrap(confusionMatrix_(actual, predicted, cutoff, use_names));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -308,7 +309,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ModelMetrics_auc_", (DL_FUNC) &_ModelMetrics_auc_, 2},
     {"_ModelMetrics_auc2_", (DL_FUNC) &_ModelMetrics_auc2_, 2},
     {"_ModelMetrics_auc3_", (DL_FUNC) &_ModelMetrics_auc3_, 3},
-    {"_ModelMetrics_confusionMatrix_", (DL_FUNC) &_ModelMetrics_confusionMatrix_, 3},
+    {"_ModelMetrics_confusionMatrix_", (DL_FUNC) &_ModelMetrics_confusionMatrix_, 4},
     {"_ModelMetrics_ppv_", (DL_FUNC) &_ModelMetrics_ppv_, 3},
     {"_ModelMetrics_npv_", (DL_FUNC) &_ModelMetrics_npv_, 3},
     {"_ModelMetrics_tnr_", (DL_FUNC) &_ModelMetrics_tnr_, 3},
